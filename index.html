@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Website-Vorschauen – Benchmark Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A2647;--blue:#0B4F9C;--bg:#F6F9FD;--line:#DCE5F0;--text:#1B2635;--muted:#5A6A80}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;font-size:18px;line-height:1.65;color:var(--text);background:var(--bg)}
+header{background:var(--navy);color:#fff;padding:56px 20px 64px}
+.wrap{max-width:1040px;margin:0 auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:600;opacity:.8;display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:28px;height:1px;background:currentColor}
+h1{font-family:"Source Serif 4",Georgia,serif;font-weight:500;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:14px 0 10px}
+h1 em{color:#8FB8EA}
+header p{margin:0;opacity:.85;max-width:620px}
+main{padding:40px 20px 64px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 4px 18px rgba(10,38,71,.06);text-decoration:none;color:inherit;display:block;transition:transform .2s,box-shadow .2s}
+a.card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(10,38,71,.12)}
+.card h2{font-family:"Source Serif 4",Georgia,serif;font-weight:500;font-size:24px;margin:0 0 6px;color:var(--navy)}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.empty{border-style:dashed;text-align:center;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="eyebrow">Benchmark Media</div>
+<h1>Website-<em>Vorschauen</em></h1>
+<p>Interne Vorschau-Seiten für Kundenprojekte. Nicht öffentlich gelistet.</p>
+</div></header>
+<main><div class="wrap">
+<div class="grid" id="kunden">
+<!-- Neue Kunden hier als Karte ergänzen: <a class="card" href="kunden-slug/"><h2>Firmenname</h2><p>Branche · Ort</p></a> -->
+<div class="card empty"><h2>Noch keine Vorschau</h2><p>Sobald die erste Kundenseite gebaut ist, erscheint sie hier.</p></div>
+</div>
+</div></main>
+<footer>Vorschau · noindex</footer>
+</body>
+</html>
