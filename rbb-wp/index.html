@@ -134,7 +134,7 @@ a{color:inherit;text-decoration:none}
 .phase{display:flex;gap:8px;margin-top:30px}
 .phase button{font:600 14px var(--sans);padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:transparent;color:rgba(255,255,255,.75);cursor:pointer;transition:all .3s}
 .phase button.on{background:#fff;color:var(--navy);border-color:#fff}
-.mtxt{min-height:120px;margin-top:22px;position:relative}
+.mtxt{min-height:160px;margin-top:22px;position:relative}
 .mtxt div{position:absolute;inset:0;opacity:0;transform:translateY(10px);transition:opacity .6s,transform .6s var(--ease)}
 .mtxt div.on{opacity:1;transform:none}
 .mtxt b{display:block;font:400 26px/1.2 var(--serif)}
@@ -144,7 +144,7 @@ a{color:inherit;text-decoration:none}
 .locs2 b{display:block;font-size:16px}
 .locs2 span{font-size:14px;color:rgba(255,255,255,.7)}
 .mapbox{position:relative;aspect-ratio:600/640;width:100%;max-width:640px;margin-inline:auto}
-.mapbox svg{width:100%;height:100%;display:block;overflow:visible}
+.mapbox svg{width:100%;height:100%;display:block;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 60%,transparent 100%)}
 .dt{fill:#24456F;transition:fill .6s}
 .dt.tw{fill:var(--blue-l)}
 .arc{fill:none;stroke:rgba(127,178,238,.25);stroke-width:1.4}
@@ -156,7 +156,7 @@ a{color:inherit;text-decoration:none}
 @keyframes rg{0%{transform:scale(.4);opacity:.9}100%{transform:scale(3.2);opacity:0}}
 .hl{font:600 15px var(--sans);fill:#fff}
 .hs{font:500 11px var(--sans);fill:var(--blue-l)}
-.tl{font:500 11px var(--sans);fill:rgba(255,255,255,.72)}
+.mtl{font:500 11px var(--sans);fill:rgba(255,255,255,.8)}
 .tdot{fill:var(--blue-l)}
 .grp{transition:opacity .8s}
 .mtoast{position:absolute;right:0;bottom:6%;display:flex;flex-direction:column;gap:8px;width:min(270px,70%)}
@@ -348,7 +348,7 @@ footer b{color:#fff}
       <div class="locs2 rv d3"><div><b>Kiel</b><span>Ziegelteich 29 · 24103 Kiel</span></div><div><b>Hamburg</b><span>Herrengraben 3 · 20459 Hamburg</span></div></div>
     </div>
     <div class="mapbox rv d1">
-      <svg id="deMap" viewBox="150 0 300 300" role="img" aria-label="Karte: Standorte Kiel und Hamburg mit Mandanten aus Norddeutschland und ganz Deutschland"></svg>
+      <svg id="deMap" viewBox="130 0 340 340" role="img" aria-label="Karte: Standorte Kiel und Hamburg mit Mandanten aus Norddeutschland und ganz Deutschland"></svg>
       <div class="mtoast" id="mtoast"></div>
     </div>
   </div>
@@ -473,14 +473,14 @@ function el(t,a,p){ var e=document.createElementNS(NS,t); for(var k in a) e.setA
 var gD = el('g',{});
 for(var y=24;y<790;y+=11){ for(var x=14+((y/11)%2?5.5:0);x<600;x+=11){ if(inside(x,y)) dots.push(el('circle',{cx:x.toFixed(1),cy:y,r:2.6,'class':'dt'},gD)); } }
 var KIEL=P(10.135,54.323), HH=P(9.99,53.55);
-var NORD=[['Rendsburg',9.67,54.30,KIEL],['Eckernförde',9.84,54.47,KIEL],['Neumünster',9.98,54.07,KIEL],['Plön',10.42,54.16,KIEL],['Lübeck',10.69,53.87,HH],['Lüneburg',10.41,53.25,HH],['Stade',9.48,53.60,HH],['Bad Segeberg',10.31,53.94,KIEL],['Pinneberg',9.80,53.66,HH],['Buxtehude',9.69,53.47,HH],['Norderstedt',10.0,53.71,HH]];
+var NORD=[['Rendsburg',9.67,54.30,KIEL],['Eckernförde',9.84,54.47,KIEL],['Neumünster',9.98,54.07,KIEL],['Plön',10.42,54.16,KIEL],['Lübeck',10.69,53.87,HH],['Lüneburg',10.41,53.25,HH],['Stade',9.48,53.60,HH],['Pinneberg',9.80,53.66,HH],['Buxtehude',9.69,53.47,HH],['Itzehoe',9.51,53.92,HH]];
 var DE=[['Berlin',13.40,52.52,HH],['München',11.58,48.14,HH],['Köln',6.96,50.94,HH],['Frankfurt',8.68,50.11,HH],['Stuttgart',9.18,48.78,HH],['Leipzig',12.37,51.34,HH],['Hannover',9.73,52.37,HH],['Bremen',8.80,53.08,HH],['Düsseldorf',6.78,51.23,HH],['Rostock',12.10,54.09,KIEL],['Nürnberg',11.08,49.45,HH],['Dresden',13.74,51.05,HH]];
 function grp(list, sm){
   var g = el('g',{'class':'grp'}), items=[];
   list.forEach(function(t,i){ var p=P(t[1],t[2]), h=t[3], mx=(p[0]+h[0])/2, my=(p[1]+h[1])/2 - (sm?14:60), d='M'+p[0]+' '+p[1]+' Q'+mx+' '+my+' '+h[0]+' '+h[1];
     el('path',{d:d,'class':'arc','stroke-width':sm?.8:1.4},g); var f=el('path',{d:d,'class':'arcf','stroke-width':sm?1.1:2,'stroke-dasharray':sm?'1.6 5':'3 9'},g);
     el('circle',{cx:p[0],cy:p[1],r:sm?2.2:4.5,'class':'tdot'},g);
-    var tx=el('text',{x:p[0]+(sm?4:8),y:p[1]+(sm?-3:-6),'class':'tl',style:sm?'font-size:6px':'font-size:12px'},g); tx.textContent=t[0];
+    var tx=el('text',{x:p[0]+(sm?4:8),y:p[1]+(sm?-3:-6),'class':'mtl',style:sm?'font-size:7px':'font-size:13px'},g); tx.textContent=t[0];
     if(!RM){ var m=el('circle',{r:sm?1.6:3.4,fill:'#fff'},g); var am=document.createElementNS(NS,'animateMotion'); am.setAttribute('dur',(2.4+Math.random()*1.6).toFixed(1)+'s'); am.setAttribute('repeatCount','indefinite'); am.setAttribute('path',d); m.appendChild(am); }
     items.push(t[0]); });
   return {g:g, items:items};
@@ -497,10 +497,10 @@ var hK = hub(KIEL), hH = hub(HH);
 hubs.appendChild(hK); hubs.appendChild(hH);
 var lbl = el('g',{});
 function hl(p, n, dx, dy){ var t=el('text',{x:p[0]+dx,y:p[1]+dy,'class':'hl'},lbl); t.textContent=n; return t; }
-var lk = hl(KIEL,'Kiel',8,-6), lh = hl(HH,'Hamburg',8,14);
+var lk = hl(KIEL,'Kiel',7,-7), lh = hl(HH,'Hamburg',7,12);
 /* Ansichten */
-var V = [[150,0,300,300],[0,0,600,820]], cur = V[0].slice(), phase = 0, anim;
-function setVB(v){ svg.setAttribute('viewBox', v.map(function(x){return x.toFixed(1);}).join(' ')); var s=v[2]/300; lk.style.fontSize=lh.style.fontSize=(15*s/1.4)+'px'; [hK,hH].forEach(function(g){ g.setAttribute('transform',''); }); }
+var V = [[130,0,340,340],[0,0,600,820]], cur = V[0].slice(), phase = 0, anim;
+function setVB(v){ svg.setAttribute('viewBox', v.map(function(x){return x.toFixed(1);}).join(' ')); var s=v[2]/300; lk.style.fontSize=lh.style.fontSize=Math.max(9,15*s/1.3)+'px'; [[hK,KIEL],[hH,HH]].forEach(function(a){ var k=Math.max(.45,v[2]/600); a[0].setAttribute('transform','translate('+a[1][0]+' '+a[1][1]+') scale('+k+') translate('+(-a[1][0])+' '+(-a[1][1])+')'); }); }
 function go(p){
   phase = p; document.querySelectorAll('.phase button').forEach(function(b){ b.classList.toggle('on', +b.dataset.p===p); });
   document.querySelectorAll('.mtxt div').forEach(function(d,i){ d.classList.toggle('on', i===p); });
