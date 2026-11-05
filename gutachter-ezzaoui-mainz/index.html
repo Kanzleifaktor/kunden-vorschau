@@ -510,6 +510,78 @@ header nav a{white-space:nowrap}
 @media (max-width:900px){.kf-grid,.kf-cards{grid-template-columns:1fr}.kf-cards .kf-card:not(.kf-real):nth-child(n+2){display:none}}
 @media (max-width:560px){.kf-row{grid-template-columns:1fr}.kf-btn{width:100%}}
 </style>
+<style>
+.wz{padding:clamp(56px,8vw,96px) 0;background:linear-gradient(180deg,var(--bg-2,#F6F9FD),#fff)}
+.wz .wrap{max-width:var(--max,1240px);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.wz-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.wz-eb{display:inline-block;font:600 13px/1 var(--sans,system-ui);letter-spacing:.12em;text-transform:uppercase;color:var(--blue,#0B4F9C);margin-bottom:12px}
+.wz-h{font:600 clamp(28px,3.6vw,44px)/1.1 var(--serif,Georgia,serif);color:var(--navy,#0A2647);margin:0}
+.wz-h em{font-style:italic;color:var(--blue,#0B4F9C)}
+.wz-live{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line,#DCE5F0);border-radius:999px;padding:10px 18px 10px 14px;box-shadow:0 10px 30px -18px rgba(10,38,71,.35);font:500 15px/1.3 var(--sans,system-ui);color:var(--navy,#0A2647)}
+.wz-dot{width:12px;height:12px;border-radius:50%;background:#1F9254;box-shadow:0 0 0 0 rgba(31,146,84,.5);animation:wzp 2s infinite;flex:none}
+.wz-dot.off{background:#C2410C;animation:none}
+@keyframes wzp{70%{box-shadow:0 0 0 12px rgba(31,146,84,0)}100%{box-shadow:0 0 0 0 rgba(31,146,84,0)}}
+.wz-live small{display:block;color:var(--muted,#4A5B73);font-size:13px}
+.wz-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(22px,4vw,48px);align-items:start}
+.wz-card{background:#fff;border:1px solid var(--line,#DCE5F0);border-radius:var(--r-l,22px);padding:clamp(18px,3vw,30px);box-shadow:var(--shadow,0 18px 40px -18px rgba(10,38,71,.22))}
+.wz-step{font:700 12px/1 var(--sans,system-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--muted,#4A5B73);margin:0 0 10px}
+.wz-car{display:block;width:100%;max-width:300px;margin:6px auto 4px;user-select:none;-webkit-tap-highlight-color:transparent}
+.wz-car .z{fill:var(--sky,#EAF2FB);stroke:var(--blue,#0B4F9C);stroke-width:1.5;cursor:pointer;transition:fill .2s}
+.wz-car .z:hover{fill:var(--sky-2,#D6E5F5)}
+.wz-car .z.on{fill:#F97316;stroke:#C2410C;animation:wzz .5s}
+.wz-car .gl{fill:#fff;opacity:.55;pointer-events:none}
+.wz-car .wh{fill:var(--navy,#0A2647);pointer-events:none}
+@keyframes wzz{50%{transform:scale(1.04)}}
+.wz-car .z{transform-box:fill-box;transform-origin:center}
+.wz-sel{min-height:30px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0 0}
+.wz-sel span{background:#FFF1E6;color:#9A3412;border-radius:999px;padding:6px 12px;font:600 13px/1 var(--sans,system-ui)}
+.wz-hint{text-align:center;color:var(--muted,#4A5B73);font:400 14px/1.4 var(--sans,system-ui);margin:6px 0 0}
+.wz-f{display:grid;gap:16px}
+.wz-chips{display:flex;flex-wrap:wrap;gap:8px}
+.wz-chips button{border:1.5px solid var(--line,#DCE5F0);background:#fff;border-radius:999px;padding:10px 14px;font:500 15px/1 var(--sans,system-ui);color:var(--navy,#0A2647);cursor:pointer}
+.wz-chips button[aria-pressed=true]{background:var(--blue,#0B4F9C);border-color:var(--blue,#0B4F9C);color:#fff}
+.wz-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.wz-f label.t{display:grid;gap:6px;font:600 14px/1.2 var(--sans,system-ui);color:var(--navy,#0A2647)}
+.wz-f input[type=text],.wz-f input[type=tel],.wz-f textarea{width:100%;box-sizing:border-box;border:1.5px solid var(--line,#DCE5F0);border-radius:12px;padding:13px 14px;font:400 16px/1.4 var(--sans,system-ui);color:var(--text,#16263D);background:#fff}
+.wz-f textarea{min-height:84px;resize:vertical}
+.wz-f input:focus,.wz-f textarea:focus{outline:none;border-color:var(--blue,#0B4F9C);box-shadow:0 0 0 4px var(--sky,#EAF2FB)}
+.wz-up{display:flex;align-items:center;gap:14px;border:2px dashed var(--sky-2,#D6E5F5);border-radius:16px;padding:14px;cursor:pointer;background:var(--bg-2,#F6F9FD)}
+.wz-up b{display:block;color:var(--navy,#0A2647);font:600 15px/1.3 var(--sans,system-ui)}
+.wz-up small{color:var(--muted,#4A5B73);font:400 13px/1.3 var(--sans,system-ui)}
+.wz-up .ic{width:46px;height:46px;border-radius:12px;background:var(--blue,#0B4F9C);display:grid;place-items:center;flex:none}
+.wz-up .ic svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2}
+.wz-thumbs{display:flex;gap:8px;flex-wrap:wrap}
+.wz-thumbs img{width:64px;height:64px;object-fit:cover;border-radius:10px;border:1px solid var(--line,#DCE5F0)}
+.wz-check{display:flex;align-items:center;gap:10px;font:500 15px/1.3 var(--sans,system-ui);color:var(--text,#16263D)}
+.wz-check input{width:20px;height:20px;accent-color:var(--blue,#0B4F9C)}
+.wz-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.wz-btn{border:0;cursor:pointer;border-radius:999px;padding:17px 26px;font:700 16px/1 var(--sans,system-ui);color:#fff;background:var(--blue,#0B4F9C);transition:transform .2s,background .2s}
+.wz-btn:hover{background:var(--blue-d,var(--navy,#083D7A));transform:translateY(-1px)}
+.wz-btn[disabled]{opacity:.6;cursor:wait}
+.wz-msg{font:500 15px/1.5 var(--sans,system-ui);margin:0;min-height:1em}.wz-msg.ok{color:#1F9254}.wz-msg.err{color:#B42318}
+.wz-small{font:400 13px/1.5 var(--sans,system-ui);color:var(--muted,#4A5B73);margin:0}
+.wz-dist{margin-top:18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line,#DCE5F0);padding-top:16px}
+.wz-dist button{border:1.5px solid var(--blue,#0B4F9C);background:#fff;color:var(--blue,#0B4F9C);border-radius:999px;padding:10px 16px;font:600 14px/1 var(--sans,system-ui);cursor:pointer}
+.wz-dist span{font:500 15px/1.4 var(--sans,system-ui);color:var(--navy,#0A2647)}
+.wl{padding:clamp(56px,8vw,96px) 0;background:var(--navy,#0A2647);color:#fff}
+.wl .wrap{max-width:var(--max,1240px);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.wl .wz-eb{color:#9CC3F0}.wl .wz-h{color:#fff}.wl .wz-h em{color:#9CC3F0}
+.wl-p{color:#C9D7EA;font:400 17px/1.6 var(--sans,system-ui);max-width:620px;margin:14px 0 30px}
+.wl-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:wl}
+.wl-list li{position:relative;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:20px 18px 18px;cursor:pointer;transition:background .25s,transform .25s}
+.wl-list li:hover{transform:translateY(-2px);background:rgba(255,255,255,.1)}
+.wl-list li .n{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.5);font:700 15px/1 var(--sans,system-ui);margin-bottom:14px;transition:all .25s}
+.wl-list li.ok{background:rgba(31,146,84,.18);border-color:rgba(74,222,128,.45)}
+.wl-list li.ok .n{background:#22C55E;border-color:#22C55E;color:#fff;font-size:0}
+.wl-list li.ok .n:after{content:"✓";font-size:17px}
+.wl-list b{display:block;font:600 16px/1.3 var(--sans,system-ui);margin-bottom:6px}
+.wl-list p{margin:0;color:#C9D7EA;font:400 14px/1.5 var(--sans,system-ui)}
+.wl-end{margin-top:26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font:500 16px/1.4 var(--sans,system-ui);color:#E6EEF8}
+.wl-end a{background:#fff;color:var(--navy,#0A2647);border-radius:999px;padding:14px 22px;font-weight:700;text-decoration:none}
+@media (max-width:1000px){.wl-list{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.wz-grid{grid-template-columns:1fr}}
+@media (max-width:560px){.wz-row{grid-template-columns:1fr}.wz-btn{width:100%}.wl-list{grid-template-columns:1fr}.wz-live{border-radius:16px}}
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -555,7 +627,8 @@ header nav a{white-space:nowrap}
       <img src="img/logo.png" alt="Ingenieurbüro Ezzaoui" height="52" style="height:52px;width:auto">
       <small>KFZ Gutachter Rhein Main</small>
     </a>
-    <nav aria-label="Hauptnavigation"><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Ablauf</a></li><li><a href="#standorte">Anfahrt</a></li><li><a href="#team">Über mich</a></li><li><a href="#faq">Fragen</a></li><li><a href="#kontakt">Kontakt</a></li></ul></nav>
+    <nav aria-label="Hauptnavigation"><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Ablauf</a></li><li><a href="#standorte">Anfahrt</a></li><li><a href="#team">Über mich</a></li><li><a href="#faq">Fragen</a></li><li><a href="#schaden">Schaden melden</a></li>
+        <li><a href="#kontakt">Kontakt</a></li></ul></nav>
     <a class="btn btn-gold" href="tel:+4915228507001" ><svg class="i"><use href="#i-phone"/></svg> <span>Jetzt <span class="hide-s"></span>anrufen</span></a>
   </div>
 </header>
@@ -591,6 +664,52 @@ header nav a{white-space:nowrap}
   </div>
   <div class="waves" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#0A2647" d="M0 70c180 40 360 40 540 10s360-60 540-30 270 50 360 40v30H0z"/></svg></div>
 </section>
+<section class="wz" id="schaden" aria-labelledby="wz-h">
+  <span id="kontaktformular"></span><span id="rueckruf"></span>
+  <div class="wrap">
+    <div class="wz-head">
+      <div><span class="wz-eb">Schaden melden – in 2 Minuten</span><h2 class="wz-h" id="wz-h">Zeigen Sie uns, <em>wo es Ihr Auto erwischt hat.</em></h2></div>
+      <div class="wz-live" id="wzLive"><span class="wz-dot" id="wzDot"></span><span><b id="wzLt">Jetzt erreichbar</b><small id="wzLs">Rückruf meist innerhalb von 30 Minuten</small></span></div>
+    </div>
+    <div class="wz-grid">
+      <div class="wz-card">
+        <p class="wz-step">1 · Schadenstellen antippen</p>
+        <svg class="wz-car" viewBox="0 0 200 400" aria-label="Auto von oben – Schadenstellen antippen">
+  <rect class="wh" x="28" y="70" width="14" height="44" rx="6"/><rect class="wh" x="158" y="70" width="14" height="44" rx="6"/>
+  <rect class="wh" x="28" y="282" width="14" height="44" rx="6"/><rect class="wh" x="158" y="282" width="14" height="44" rx="6"/>
+  <rect x="38" y="16" width="124" height="370" rx="44" fill="#fff" stroke="var(--line,#DCE5F0)" stroke-width="2"/>
+  <path class="z" data-z="Front" d="M70 22 Q100 8 130 22 L134 44 L66 44 Z" tabindex="0" role="button" aria-label="Front"/><path class="z" data-z="Motorhaube" d="M66 48 L134 48 L138 118 L62 118 Z" tabindex="0" role="button" aria-label="Motorhaube"/><path class="z" data-z="Kotflügel vorne links" d="M40 52 Q46 40 62 44 L58 120 L40 120 Z" tabindex="0" role="button" aria-label="Kotflügel vorne links"/><path class="z" data-z="Kotflügel vorne rechts" d="M160 52 Q154 40 138 44 L142 120 L160 120 Z" tabindex="0" role="button" aria-label="Kotflügel vorne rechts"/><path class="z" data-z="Frontscheibe" d="M62 122 L138 122 L132 156 L68 156 Z" tabindex="0" role="button" aria-label="Frontscheibe"/><path class="z" data-z="Tür vorne links" d="M40 124 L58 124 L60 210 L40 210 Z" tabindex="0" role="button" aria-label="Tür vorne links"/><path class="z" data-z="Tür vorne rechts" d="M160 124 L142 124 L140 210 L160 210 Z" tabindex="0" role="button" aria-label="Tür vorne rechts"/><path class="z" data-z="Dach" d="M68 160 L132 160 L132 252 L68 252 Z" tabindex="0" role="button" aria-label="Dach"/><path class="z" data-z="Tür hinten links" d="M40 214 L60 214 L60 292 L40 292 Z" tabindex="0" role="button" aria-label="Tür hinten links"/><path class="z" data-z="Tür hinten rechts" d="M160 214 L140 214 L140 292 L160 292 Z" tabindex="0" role="button" aria-label="Tür hinten rechts"/><path class="z" data-z="Heckscheibe" d="M68 256 L132 256 L138 286 L62 286 Z" tabindex="0" role="button" aria-label="Heckscheibe"/><path class="z" data-z="Seitenteil hinten links" d="M40 296 L60 296 L62 352 Q46 356 40 344 Z" tabindex="0" role="button" aria-label="Seitenteil hinten links"/><path class="z" data-z="Seitenteil hinten rechts" d="M160 296 L140 296 L138 352 Q154 356 160 344 Z" tabindex="0" role="button" aria-label="Seitenteil hinten rechts"/><path class="z" data-z="Kofferraum" d="M62 290 L138 290 L136 340 L64 340 Z" tabindex="0" role="button" aria-label="Kofferraum"/><path class="z" data-z="Heck" d="M64 344 L136 344 L132 372 Q100 386 68 372 Z" tabindex="0" role="button" aria-label="Heck"/>
+  <path class="gl" d="M74 128 L126 128 L122 148 L78 148 Z"/><path class="gl" d="M76 262 L124 262 L128 280 L72 280 Z"/>
+</svg>
+        <div class="wz-sel" id="wzSel"></div>
+        <p class="wz-hint" id="wzHint">Tippen Sie auf die beschädigten Stellen – mehrere sind möglich.</p>
+        <div class="wz-dist"><button type="button" id="wzGeo">Wie weit ist es zu Ihnen?</button><span id="wzKm">Wir kommen auch zu Ihnen.</span></div>
+      </div>
+      <form class="wz-card wz-f" id="wz-form" action="https://kanzleifaktor-crm.vercel.app/api/seite/kontakt" method="post" novalidate>
+        <input type="hidden" name="t" value="eyJsIjoiODJkZTlkYzYtYTk4YS00OTdhLWFmMWQtZjAxYjcxNWI1ZmFmIiwiZSI6ImluZm9AcmhlaW5tYWluLWtmemd1dGFjaHRlci5kZSIsInMiOiJndXRhY2h0ZXItZXp6YW91aS1tYWlueiJ9.zVYWszxEFP_f8tvVp4GWan"><input type="hidden" name="ts" value="">
+        <label class="wz-hp" aria-hidden="true">Website<input type="text" name="firma_web" tabindex="-1" autocomplete="off"></label>
+        <div><p class="wz-step">2 · Was ist passiert?</p>
+          <div class="wz-chips" data-k="Unfall"><button type="button">Unverschuldet</button><button type="button">Teilschuld / unklar</button><button type="button">Selbst verursacht</button><button type="button">Parkschaden / Fahrerflucht</button></div></div>
+        <div><p class="wz-step">3 · Ist das Auto fahrbereit?</p>
+          <div class="wz-chips" data-k="Fahrbereit"><button type="button">Ja</button><button type="button">Nein</button><button type="button">Weiß nicht</button></div></div>
+        <div><p class="wz-step">4 · Fotos (optional)</p>
+          <label class="wz-up"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span><b>Fotos aufnehmen oder hochladen</b><small>bis zu 4 Bilder – so können wir den Schaden vorab einschätzen</small></span>
+          <input type="file" id="wzFiles" accept="image/*" multiple hidden></label>
+          <div class="wz-thumbs" id="wzThumbs"></div></div>
+        <div class="wz-row">
+          <label class="t">Ihr Name<input type="text" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></label>
+          <label class="t">Telefonnummer<input type="tel" name="telefon" required autocomplete="tel" placeholder="z. B. 0171 1234567"></label>
+        </div>
+        <label class="t">Nachricht (optional)<textarea name="extra" placeholder="z. B. Unfallort, Versicherung, Wunschtermin"></textarea></label>
+        <label class="wz-check"><input type="checkbox" name="rueckruf" value="1" checked> Bitte rufen Sie mich zurück</label>
+        <button class="wz-btn" type="submit">Schaden melden</button>
+        <p class="wz-msg" role="status" aria-live="polite"></p>
+        <p class="wz-small">Kostenlos und unverbindlich. Mit dem Absenden willigen Sie ein, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verwenden.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section class="facts" aria-label="Ihre Vorteile"><div class="wrap"><div class="fact rv"><svg class="i"><use href="#i-user"/></svg><h3>Persönlich</h3><p>Amine Ezzaoui ist Ihr direkter Ansprechpartner – von der Besichtigung bis zur Erklärung Ihres Gutachtens.</p></div><div class="fact rv d1"><svg class="i"><use href="#i-car"/></svg><h3>Mobil vor Ort</h3><p>Zu Hause, am Arbeitsplatz, in der Werkstatt oder am Firmenstandort – im Rhein-Main-Gebiet und bis zu 100 km im Umkreis.</p></div><div class="fact rv d2"><svg class="i"><use href="#i-clock"/></svg><h3>Schnell</h3><p>Besichtigung nach Abstimmung am selben Tag, Gutachten innerhalb von 24 Stunden nach der Besichtigung*.</p></div><div class="fact rv d3"><svg class="i"><use href="#i-shield"/></svg><h3>Verbandsgeprüft</h3><p>Ingenieur (B.Eng.) Maschinenbau und Mitglied im Verband freier Kraftfahrzeug-Sachverständiger e. V. (VfK).</p></div></div></section>
 <section class="sec" id="leistungen" aria-labelledby="svc-h">
   <div class="wrap">
@@ -700,6 +819,15 @@ header nav a{white-space:nowrap}
   </div>
   
 </section>
+<section class="wl" id="unfall-checkliste" aria-labelledby="wl-h">
+  <div class="wrap">
+    <span class="wz-eb">Checkliste</span>
+    <h2 class="wz-h" id="wl-h">Unfall gehabt? <em>Das ist jetzt zu tun.</em></h2>
+    <p class="wl-p">Fünf Schritte, die Ihnen nach einem Unfall Ärger und Geld sparen. Tippen Sie zum Abhaken.</p>
+    <ol class="wl-list" id="wlList"><li tabindex="0"><span class="n">1</span><b>Unfallstelle sichern</b><p>Warnblinker an, Warnweste, Warndreieck aufstellen. Verletzte versorgen, 112 rufen.</p></li><li tabindex="0"><span class="n">2</span><b>Polizei &amp; Daten</b><p>Bei Verletzten oder Streit Polizei rufen. Kennzeichen, Versicherung und Kontakt des Unfallgegners notieren.</p></li><li tabindex="0"><span class="n">3</span><b>Fotos machen</b><p>Schäden, Fahrzeugpositionen und Umgebung fotografieren – aus mehreren Blickwinkeln.</p></li><li tabindex="0"><span class="n">4</span><b>Nichts unterschreiben</b><p>Kein Schuldanerkenntnis abgeben und den Gutachter der gegnerischen Versicherung nicht vorschnell akzeptieren.</p></li><li tabindex="0"><span class="n">5</span><b>Eigenen Gutachter wählen</b><p>Als Geschädigter dürfen Sie den Sachverständigen selbst wählen – die Kosten trägt in der Regel die Versicherung des Verursachers.</p></li></ol>
+    <div class="wl-end"><span id="wlDone">Geschafft? Dann melden Sie uns den Schaden – wir kümmern uns um den Rest.</span><a href="#schaden">Schaden melden</a></div>
+  </div>
+</section>
 <section class="sec" id="faq" style="background:var(--bg-2)" aria-labelledby="fq-h"><div class="wrap faq-wrap"><div><span class="eyebrow rv">Häufige Fragen</span><h2 class="h2 rv d1" id="fq-h">Gut zu wissen <em>nach einem Unfall.</em></h2><p class="lead rv d2">Ihre Frage ist nicht dabei? Rufen Sie an oder schreiben Sie uns per WhatsApp – wir antworten schnell.</p></div><div class="faq"><details><summary>Wer bezahlt das Gutachten nach einem unverschuldeten Unfall? <span class="pm">+</span></summary><p>Erforderliche und zweckmäßige Gutachterkosten können zum ersatzfähigen Unfallschaden gehören. Bei voller Haftung des Unfallgegners werden sie grundsätzlich von dessen Haftpflichtversicherung getragen. Die Erstberatung ist kostenlos.</p></details><details><summary>Darf ich meinen Gutachter selbst auswählen? <span class="pm">+</span></summary><p>Bei einem Haftpflichtschaden dürfen Sie grundsätzlich einen qualifizierten Sachverständigen Ihrer Wahl mit der Schadenfeststellung beauftragen. Sie müssen sich nicht allein auf die Empfehlung der gegnerischen Versicherung verlassen.</p></details><details><summary>Brauche ich bei jedem Kratzer ein Gutachten? <span class="pm">+</span></summary><p>Nicht jeder kleine Schaden erfordert ein vollständiges Gutachten. Bei einem erkennbaren Bagatellschaden kann ein Kostenvoranschlag ausreichen. Rufen Sie an – wir besprechen, was für Ihren Fall passt.</p></details><details><summary>Wie schnell bekomme ich einen Termin und mein Gutachten? <span class="pm">+</span></summary><p>Eine Besichtigung am selben Tag ist nach Terminabstimmung möglich. Das Gutachten erhalten Sie innerhalb von 24 Stunden nach der Besichtigung, sobald alle erforderlichen Unterlagen vorliegen und zusätzliche Prüfungen abgeschlossen sind.</p></details><details><summary>Was soll ich für den Termin bereithalten? <span class="pm">+</span></summary><p>Hilfreich sind die Zulassungsbescheinigung Teil I, Angaben zum Unfall und vorhandene Fotos. Falls verfügbar, halten Sie Schadennummer, Schriftverkehr und Informationen zu Vorschäden bereit.</p></details><details><summary>Was übernehmen Sie – und was macht der Anwalt? <span class="pm">+</span></summary><p>Ich kümmere mich um Schadenaufnahme, technische Bewertung und Gutachtenerstellung. Auf Wunsch stimmen wir Unterlagen und technische Rückfragen mit einer erfahrenen Verkehrsrechtskanzlei ab. Die rechtliche Vertretung übernimmt die beauftragte Kanzlei.</p></details></div></div></section>
 <section class="kf-rv" id="bewertungen" aria-labelledby="kfrv-h">
   <div class="wrap">
@@ -729,34 +857,6 @@ header nav a{white-space:nowrap}
     </div>
   </div>
 </section>
-<section class="kf-sec" id="rueckruf" aria-labelledby="kf-h">
-  <div class="wrap kf-grid">
-    <div>
-      <span class="kf-eb">Rückruf anfordern</span>
-      <h2 class="kf-h" id="kf-h">Wir rufen Sie <em>gerne zurück.</em></h2>
-      <p class="kf-p">Hinterlassen Sie uns Ihren Namen und Ihre Telefonnummer – wir melden uns so schnell wie möglich bei Ihnen.</p>
-      <ul class="kf-list"><li>Kostenlos und unverbindlich</li><li>Persönlicher Rückruf</li><li>Ihre Daten bleiben bei uns</li></ul>
-    </div>
-    <form class="kf-form" id="kf-form" action="https://kanzleifaktor-crm.vercel.app/api/seite/kontakt" method="post" novalidate>
-      <input type="hidden" name="t" value="eyJsIjoiODJkZTlkYzYtYTk4YS00OTdhLWFmMWQtZjAxYjcxNWI1ZmFmIiwiZSI6ImluZm9AcmhlaW5tYWluLWtmemd1dGFjaHRlci5kZSIsInMiOiJndXRhY2h0ZXItZXp6YW91aS1tYWlueiJ9.zVYWszxEFP_f8tvVp4GWan"><input type="hidden" name="ts" value="">
-      <label class="kf-hp" aria-hidden="true">Website<input type="text" name="firma_web" tabindex="-1" autocomplete="off"></label>
-      <div class="kf-row">
-        <label>Ihr Name<input type="text" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></label>
-        <label>Telefonnummer<input type="tel" name="telefon" required autocomplete="tel" placeholder="z. B. 0171 1234567"></label>
-      </div>
-      <label>Ihre Nachricht<textarea name="nachricht" placeholder="Worum geht es? (optional)"></textarea></label>
-      <label class="kf-check"><input type="checkbox" name="rueckruf" value="1" checked> Bitte rufen Sie mich zurück</label>
-      <button class="kf-btn" type="submit">Rückruf anfordern</button>
-      <p class="kf-msg" role="status" aria-live="polite"></p>
-      <p class="kf-small">Mit dem Absenden willigen Sie ein, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verwenden.</p>
-    </form>
-  </div>
-</section>
-<script>(function(){var f=document.getElementById("kf-form");if(!f)return;f.ts.value=Date.now();f.addEventListener("submit",function(ev){ev.preventDefault();var m=f.querySelector(".kf-msg"),b=f.querySelector(".kf-btn");
-if(!f.name.value.trim()||f.telefon.value.replace(/\D/g,"").length<5){m.className="kf-msg err";m.textContent="Bitte geben Sie Ihren Namen und Ihre Telefonnummer an.";return}
-b.disabled=true;m.className="kf-msg";m.textContent="Wird gesendet …";fetch(f.action,{method:"POST",body:new FormData(f)}).then(function(r){return r.json()}).then(function(d){
-m.className="kf-msg "+(d.ok?"ok":"err");m.textContent=d.meldung||(d.ok?"Vielen Dank!":"Senden fehlgeschlagen.");if(d.ok){f.reset();b.textContent="Gesendet ✓"}else b.disabled=false}).catch(function(){m.className="kf-msg err";m.textContent="Senden fehlgeschlagen – bitte rufen Sie uns an.";b.disabled=false})})})();</script>
-
 </main>
 <footer><div class="wrap">
   <div class="fl"><b>Ingenieurbüro Ezzaoui</b><small>KFZ Gutachter Rhein Main</small></div>
@@ -764,7 +864,7 @@ m.className="kf-msg "+(d.ok?"ok":"err");m.textContent=d.meldung||(d.ok?"Vielen D
   <div class="copy">© <span id="yr">2026</span> KFZ Gutachter Rhein Main – Ingenieurbüro Ezzaoui · Inhaber Amine Ezzaoui</div>
 </div></footer>
 <a class="fab" href="https://wa.me/4915228507001?text=Hallo%20Herr%20Ezzaoui%2C%20ich%20brauche%20ein%20Unfallgutachten." target="_blank" rel="noopener" aria-label="Per WhatsApp schreiben"><span class="wa-ic"><svg><use href="#i-wa"/></svg></span><span>Unfall? Fotos schicken<small>per WhatsApp</small></span></a>
-<nav class="mbar" aria-label="Schnellkontakt" style="grid-template-columns:1fr 1fr 1.6fr"><a href="tel:+4915228507001"><svg><use href="#i-phone"/></svg>Anrufen</a><a class="wa" href="https://wa.me/4915228507001?text=Hallo%20Herr%20Ezzaoui%2C%20ich%20brauche%20ein%20Unfallgutachten." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a><a class="go" href="#kontakt"><svg><use href="#i-mail"/></svg>Kontakt</a></nav>
+<nav class="mbar" aria-label="Schnellkontakt" style="grid-template-columns:1fr 1fr 1.6fr"><a href="tel:+4915228507001"><svg><use href="#i-phone"/></svg>Anrufen</a><a class="wa" href="https://wa.me/4915228507001?text=Hallo%20Herr%20Ezzaoui%2C%20ich%20brauche%20ein%20Unfallgutachten." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a><a class="go" href="#schaden"><svg><use href="#i-mail"/></svg>Schaden melden</a></nav>
 <script>
 (function(){
 var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -883,5 +983,42 @@ document.getElementById('qreset').addEventListener('click', function(){ ans={}; 
 </script>
 
 <script async src="https://kanzleifaktor-crm.vercel.app/vorschau-besuch.js" data-token="eyJsIjoiODJkZTlkYzYtYTk4YS00OTdhLWFmMWQtZjAxYjcxNWI1ZmFmIiwiZSI6ImluZm9AcmhlaW5tYWluLWtmemd1dGFjaHRlci5kZSIsInMiOiJndXRhY2h0ZXItZXp6YW91aS1tYWlueiJ9.zVYWszxEFP_f8tvVp4GWan"></script>
+<script>(function(){
+var H={},LAT=49.96051,LON=8.2019;
+/* Jetzt erreichbar */
+try{var d=new Date(new Date().toLocaleString("en-US",{timeZone:"Europe/Berlin"})),h=d.getHours()+d.getMinutes()/60,sl=H[d.getDay()]||[],op=sl.some(function(s){return h>=s[0]&&h<s[1]});
+if(Object.keys(H).length){var dot=document.getElementById("wzDot"),lt=document.getElementById("wzLt"),ls=document.getElementById("wzLs");
+if(!op){dot.classList.add("off");lt.textContent="Gerade nicht im Büro";ls.textContent="Melden Sie den Schaden – wir rufen schnellstmöglich zurück"}}}catch(e){}
+/* Auto antippen */
+var sel=[],box=document.getElementById("wzSel"),hint=document.getElementById("wzHint");
+function draw(){box.innerHTML=sel.map(function(z){return"<span>"+z+"</span>"}).join("");hint.style.display=sel.length?"none":""}
+document.querySelectorAll(".wz-car .z").forEach(function(p){function t(){var z=p.dataset.z,i=sel.indexOf(z);if(i<0){sel.push(z);p.classList.add("on")}else{sel.splice(i,1);p.classList.remove("on")}draw()}
+p.addEventListener("click",t);p.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t()}})});
+/* Chips */
+var ans={};document.querySelectorAll(".wz-chips").forEach(function(g){g.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){g.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});ans[g.dataset.k]=b.textContent})})});
+/* Entfernung */
+var geo=document.getElementById("wzGeo"),km=document.getElementById("wzKm");
+geo.addEventListener("click",function(){if(!navigator.geolocation){km.textContent="Ihr Browser unterstützt das leider nicht.";return}km.textContent="Standort wird ermittelt …";
+navigator.geolocation.getCurrentPosition(function(p){var R=6371,r=Math.PI/180,a=Math.sin((p.coords.latitude-LAT)*r/2),b=Math.sin((p.coords.longitude-LON)*r/2),c=a*a+Math.cos(LAT*r)*Math.cos(p.coords.latitude*r)*b*b,k=2*R*Math.asin(Math.sqrt(c))*1.25,min=Math.max(5,Math.round(k/55*60/5)*5);
+km.innerHTML=k<1.5?"<b>Sie sind ganz in der Nähe.</b>":"Sie sind ca. <b>"+Math.round(k)+" km</b> entfernt – rund <b>"+min+" Minuten</b> Fahrt. Wir kommen gern zu Ihnen."},function(){km.textContent="Kein Standort freigegeben – kein Problem, wir kommen auch zu Ihnen."},{timeout:9000})});
+/* Fotos verkleinern */
+var files=[],inp=document.getElementById("wzFiles"),th=document.getElementById("wzThumbs");
+function shrink(f){return new Promise(function(res){var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);c.toBlob(function(b){res(b)},"image/jpeg",.78)};im.onerror=function(){res(null)};im.src=u})}
+inp.addEventListener("change",function(){Array.prototype.slice.call(inp.files).forEach(function(f){if(files.length>=4)return;shrink(f).then(function(b){if(!b||files.length>=4)return;files.push(b);var i=document.createElement("img");i.src=URL.createObjectURL(b);i.alt="Schadenfoto";th.appendChild(i)})});inp.value=""});
+/* Senden */
+var f=document.getElementById("wz-form");f.ts.value=Date.now();
+f.addEventListener("submit",function(ev){ev.preventDefault();var m=f.querySelector(".wz-msg"),btn=f.querySelector(".wz-btn");
+if(!f.name.value.trim()||f.telefon.value.replace(/\D/g,"").length<5){m.className="wz-msg err";m.textContent="Bitte geben Sie Ihren Namen und Ihre Telefonnummer an.";return}
+var fd=new FormData();["t","ts","firma_web","name","telefon"].forEach(function(k){fd.append(k,f[k].value)});if(f.rueckruf.checked)fd.append("rueckruf","1");
+fd.append("nachricht","Schadenstellen: "+(sel.join(", ")||"–")+"\nUnfall: "+(ans.Unfall||"–")+"\nFahrbereit: "+(ans.Fahrbereit||"–")+(f.extra.value.trim()?"\n\n"+f.extra.value.trim():""));
+files.forEach(function(b,i){fd.append("foto",b,"schaden-"+(i+1)+".jpg")});
+btn.disabled=true;m.className="wz-msg";m.textContent="Wird gesendet …";
+fetch(f.action,{method:"POST",body:fd}).then(function(r){return r.json()}).then(function(d){m.className="wz-msg "+(d.ok?"ok":"err");m.textContent=d.meldung||(d.ok?"Vielen Dank!":"Senden fehlgeschlagen.");if(d.ok){btn.textContent="Gesendet ✓"}else btn.disabled=false})
+.catch(function(){m.className="wz-msg err";m.textContent="Senden fehlgeschlagen – bitte rufen Sie uns an.";btn.disabled=false})});
+/* Checkliste */
+var li=document.querySelectorAll("#wlList li"),done=document.getElementById("wlDone");
+li.forEach(function(l){function t(){l.classList.toggle("ok");var n=document.querySelectorAll("#wlList li.ok").length;done.textContent=n===li.length?"Alles erledigt – jetzt nur noch den Schaden melden, wir kümmern uns um den Rest.":n+" von "+li.length+" erledigt."}
+l.addEventListener("click",t);l.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t()}})});
+})();</script>
 </body>
 </html>
