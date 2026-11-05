@@ -39,7 +39,9 @@ a{color:inherit;text-decoration:none}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .logo{display:flex;align-items:center;gap:14px;color:#fff;transition:color .4s}
 .top.sc .logo{color:var(--navy)}
-.logo .mk{width:46px;height:46px;border-radius:12px;background:var(--blue);display:grid;place-items:center;font:600 17px var(--serif);color:#fff;letter-spacing:.04em;box-shadow:0 8px 20px -8px rgba(11,79,156,.8)}
+.logo .mk{height:52px;padding:7px 11px;border-radius:12px;background:#fff;display:grid;place-items:center;box-shadow:0 8px 22px -10px rgba(6,22,44,.6)}
+.logo .mk .lg{height:100%;width:auto;display:block}
+.top.sc .logo .mk{box-shadow:none;padding:4px 6px}
 .logo b{display:block;font:600 19px var(--serif);letter-spacing:.01em}
 .logo small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
 .nav{display:flex;gap:30px;font-size:15.5px;font-weight:500;color:#fff}
@@ -48,6 +50,9 @@ a{color:inherit;text-decoration:none}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--blue-l);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
 .nav a:hover::after{transform:scaleX(1)}
 .top .btn{height:46px;padding:0 20px;font-size:15px}
+.top .btn,.logo small,.logo b{white-space:nowrap}
+.nav{gap:26px}
+@media (max-width:1340px){.logo small{display:none}}
 @media (max-width:1060px){.nav{display:none}}
 @media (max-width:560px){.top .btn span{display:none}.top .btn{padding:0 14px}.logo small{display:none}}
 /* Hero */
@@ -305,6 +310,8 @@ a{color:inherit;text-decoration:none}
 footer{background:var(--navy);color:rgba(255,255,255,.7);padding:50px 0;font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer b{color:#fff}
+.flogo{display:inline-grid;place-items:center;background:#fff;border-radius:10px;padding:6px 9px;height:44px;margin-bottom:12px}.flogo .lg{height:100%;width:auto}
+footer .flogo+b{display:block}
 .note{font-size:12px;opacity:.6;margin-top:6px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.tl{opacity:1;transform:none}.hero h1 .ln>span{transform:none}}
 </style>
@@ -318,7 +325,7 @@ footer b{color:#fff}
 
 <header class="top" id="top">
   <div class="wrap">
-    <a class="logo" href="#"><span class="mk">RBB</span><span><b>RBB Büchl &amp; Partner</b><small>Wirtschaftsprüfer · Steuerberater · Rechtsanwälte</small></span></a>
+    <a class="logo" href="#"><span class="mk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 108" class="lg" aria-hidden="true"> <polygon fill="#43358B" points="92.9,108.5 112.2,0 114.4,0 95.1,108.5 "/> <polygon fill="#43358B" points="38.8,108.5 58,0 60.2,0 41,108.5 "/> <path fill="#43358B" d="M2.3,93.1h6.9L13.9,67h4l11,26.2h7.8L25.4,66.5c7.1-0.9,14.4-3.9,16-12.9c2.1-11.4-5.5-13.7-15.2-13.7H3.9 l-0.2,1.3c6.5,1.3,7.7,1.5,6.7,7L2.3,93.1z M17.3,48.3c0.8-4.7,1.3-5.3,6.6-5.3c6.2,0,11.4,2.3,10,9.8c-2,11.1-11.6,11.1-17.3,11.1 h-2.1L17.3,48.3z"/> <path fill="#43358B" d="M53.5,93.1h13.8c6,0,21,0,23.6-14.3c1.8-9.8-4.2-13-9.6-14l0-0.2c3.8-0.8,10.1-3.9,11.6-12 c2.2-12.3-9.8-12.7-15.5-12.7H55.3L55,41.2c6.5,1.3,7.5,1.6,6.5,7.7L53.5,93.1z M68.3,48.9c1-5.3,1.4-5.9,6.8-5.9 c6.3,0,11.3,2.1,9.9,10.3C83.3,63,74,63.5,69.6,63.5h-3.9L68.3,48.9z M65.2,66.6h3.9c5.1,0,16.3,0.2,14.1,12.3 c-1.6,8.9-8.7,11.2-15.6,11.2c-6.6,0-6.5-0.5-5.4-6.5L65.2,66.6z"/> <path fill="#86BD40" d="M107.9,93.1h13.8c6,0,21,0,23.6-14.3c1.8-9.8-4.2-13-9.6-14l0-0.2c3.8-0.8,10.1-3.9,11.6-12 c2.2-12.3-9.8-12.7-15.5-12.7h-22.1l-0.2,1.3c6.5,1.3,7.5,1.6,6.5,7.7L107.9,93.1z M122.7,48.9c1-5.3,1.4-5.9,6.8-5.9 c6.3,0,11.3,2.1,9.9,10.3c-1.7,9.7-11,10.2-15.4,10.2h-3.9L122.7,48.9z M119.6,66.6h3.9c5.1,0,16.3,0.2,14.1,12.3 c-1.6,8.9-8.7,11.2-15.6,11.2c-6.6,0-6.5-0.5-5.4-6.5L119.6,66.6z"/> </svg></span><span><b>RBB Büchl &amp; Partner</b><small>Wirtschaftsprüfer · Steuerberater · Rechtsanwälte</small></span></a>
     <nav class="nav" aria-label="Hauptnavigation"><a href="#leistungen">Leistungen</a><a href="#standorte">Standorte</a><a href="#team">Team</a><a href="#karriere">Karriere</a><a href="#kontakt">Kontakt</a></nav>
     <a class="btn btn-b" href="#kontakt"><svg><use href="#i-cal"/></svg><span>Erstgespräch vereinbaren</span></a>
   </div>
@@ -501,7 +508,7 @@ footer b{color:#fff}
   </div>
 </section>
 
-<footer><div class="wrap"><div><b>RBB Büchl &amp; Partner mbB</b><br>Wirtschaftsprüfer · Steuerberater · Rechtsanwälte<div class="note">Entwurf einer neuen Startseite – Vorschau von Kanzleifaktor</div></div><div>Kiel · Ziegelteich 29 · +49 431 90605 0<br>Hamburg · Herrengraben 3 · +49 40 450163 0<div class="fsoc"><a href="https://www.instagram.com/rbb_steuerberatung/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a><a href="https://www.linkedin.com/company/36444273/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg></a><a href="https://www.facebook.com/rbb.wp" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.1L14.1 2C10.9 2 10 4.4 10 6.3v2.2H7.5V12H10v10h4V12h2.9l.4-3.5z"/></svg></a></div></div></div></footer>
+<footer><div class="wrap"><div><span class="flogo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 108" class="lg" aria-hidden="true"> <polygon fill="#43358B" points="92.9,108.5 112.2,0 114.4,0 95.1,108.5 "/> <polygon fill="#43358B" points="38.8,108.5 58,0 60.2,0 41,108.5 "/> <path fill="#43358B" d="M2.3,93.1h6.9L13.9,67h4l11,26.2h7.8L25.4,66.5c7.1-0.9,14.4-3.9,16-12.9c2.1-11.4-5.5-13.7-15.2-13.7H3.9 l-0.2,1.3c6.5,1.3,7.7,1.5,6.7,7L2.3,93.1z M17.3,48.3c0.8-4.7,1.3-5.3,6.6-5.3c6.2,0,11.4,2.3,10,9.8c-2,11.1-11.6,11.1-17.3,11.1 h-2.1L17.3,48.3z"/> <path fill="#43358B" d="M53.5,93.1h13.8c6,0,21,0,23.6-14.3c1.8-9.8-4.2-13-9.6-14l0-0.2c3.8-0.8,10.1-3.9,11.6-12 c2.2-12.3-9.8-12.7-15.5-12.7H55.3L55,41.2c6.5,1.3,7.5,1.6,6.5,7.7L53.5,93.1z M68.3,48.9c1-5.3,1.4-5.9,6.8-5.9 c6.3,0,11.3,2.1,9.9,10.3C83.3,63,74,63.5,69.6,63.5h-3.9L68.3,48.9z M65.2,66.6h3.9c5.1,0,16.3,0.2,14.1,12.3 c-1.6,8.9-8.7,11.2-15.6,11.2c-6.6,0-6.5-0.5-5.4-6.5L65.2,66.6z"/> <path fill="#86BD40" d="M107.9,93.1h13.8c6,0,21,0,23.6-14.3c1.8-9.8-4.2-13-9.6-14l0-0.2c3.8-0.8,10.1-3.9,11.6-12 c2.2-12.3-9.8-12.7-15.5-12.7h-22.1l-0.2,1.3c6.5,1.3,7.5,1.6,6.5,7.7L107.9,93.1z M122.7,48.9c1-5.3,1.4-5.9,6.8-5.9 c6.3,0,11.3,2.1,9.9,10.3c-1.7,9.7-11,10.2-15.4,10.2h-3.9L122.7,48.9z M119.6,66.6h3.9c5.1,0,16.3,0.2,14.1,12.3 c-1.6,8.9-8.7,11.2-15.6,11.2c-6.6,0-6.5-0.5-5.4-6.5L119.6,66.6z"/> </svg></span><b>RBB Büchl &amp; Partner mbB</b><br>Wirtschaftsprüfer · Steuerberater · Rechtsanwälte<div class="note">Entwurf einer neuen Startseite – Vorschau von Kanzleifaktor</div></div><div>Kiel · Ziegelteich 29 · +49 431 90605 0<br>Hamburg · Herrengraben 3 · +49 40 450163 0<div class="fsoc"><a href="https://www.instagram.com/rbb_steuerberatung/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a><a href="https://www.linkedin.com/company/36444273/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg></a><a href="https://www.facebook.com/rbb.wp" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.1L14.1 2C10.9 2 10 4.4 10 6.3v2.2H7.5V12H10v10h4V12h2.9l.4-3.5z"/></svg></a></div></div></div></footer>
 
 <script>
 (function(){
