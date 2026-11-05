@@ -504,6 +504,7 @@ footer a:hover{color:#fff}
 @media (max-width:560px){.kf-row{grid-template-columns:1fr}.kf-btn{width:100%}}
 </style>
 <style id="hdr-fix">.logo{min-width:0}.logo small{overflow-wrap:anywhere;hyphens:auto}header nav{flex:none}@media (max-width:1600px){.logo small{display:none}}</style>
+<style id="kf-oben">.kf-sec.kf-top{background:var(--bg-2,#F6F9FD);border-top:1px solid var(--line,#DCE5F0);border-bottom:1px solid var(--line,#DCE5F0)}header nav li.kf-nav{display:none}@media (min-width:1360px){header nav li.kf-nav{display:block}}header nav li.kf-nav a{color:var(--blue,#0B4F9C);font-weight:600}.mbar.kf4{grid-template-columns:1fr 1fr 1fr 1.4fr!important}.mbar.kf4 a{font-size:12.5px}.mbar.kf4 a.go{flex-direction:column;gap:2px;font-size:13px;text-align:center;line-height:1.1}</style>
 </head>
 <body>
 
@@ -548,7 +549,7 @@ footer a:hover{color:#fff}
         <li><a href="#hu-check">HU fällig?</a></li>
         <li><a href="#ueber">Über uns</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li class="kf-nav"><a href="#kontaktformular">Nachricht senden</a></li><li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
     <a class="btn btn-blue" href="https://www.terminland.de/pruefstelle_bornum/" target="_blank" rel="noopener"><svg class="i"><use href="#i-cal"/></svg>Termin<span class="hide-s">online buchen</span></a>
@@ -614,6 +615,35 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- SERVICES -->
+<section class="kf-sec kf-top" id="kontaktformular" aria-labelledby="kf-h">
+  <span id="rueckruf"></span><div class="wrap kf-grid">
+    <div>
+      <span class="kf-eb">Kontaktformular</span>
+      <h2 class="kf-h" id="kf-h">Schreiben <em>Sie uns.</em></h2>
+      <p class="kf-p">Name, Telefonnummer und kurz Ihr Anliegen – wir melden uns so schnell wie möglich bei Ihnen.</p>
+      <ul class="kf-list"><li>Kostenlos und unverbindlich</li><li>Persönlicher Rückruf</li><li>Ihre Daten bleiben bei uns</li></ul>
+    </div>
+    <form class="kf-form" id="kf-form" action="https://kanzleifaktor-crm.vercel.app/api/seite/kontakt" method="post" novalidate>
+      <input type="hidden" name="t" value="eyJsIjoiYmUyZjA2YTMtNTBhYS00YTY4LWIwMDQtZjRjZjRkZjc5MmE2IiwiZSI6ImluZm9Ac3JzLWhhbm5vdmVyLmRlIiwicyI6InNycy1oYW5ub3ZlciJ9.4kleid-yYjYEpmUvTRsunr"><input type="hidden" name="ts" value="">
+      <label class="kf-hp" aria-hidden="true">Website<input type="text" name="firma_web" tabindex="-1" autocomplete="off"></label>
+      <div class="kf-row">
+        <label>Ihr Name<input type="text" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></label>
+        <label>Telefonnummer<input type="tel" name="telefon" required autocomplete="tel" placeholder="z. B. 0171 1234567"></label>
+      </div>
+      <label>Ihre Nachricht<textarea name="nachricht" placeholder="Worum geht es? (optional)"></textarea></label>
+      <label class="kf-check"><input type="checkbox" name="rueckruf" value="1" checked> Bitte um Rückruf</label>
+      <button class="kf-btn" type="submit">Senden</button>
+      <p class="kf-msg" role="status" aria-live="polite"></p>
+      <p class="kf-small">Mit dem Absenden willigen Sie ein, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verwenden.</p>
+    </form>
+  </div>
+</section>
+<script>(function(){var f=document.getElementById("kf-form");if(!f)return;f.ts.value=Date.now();f.addEventListener("submit",function(ev){ev.preventDefault();var m=f.querySelector(".kf-msg"),b=f.querySelector(".kf-btn");
+if(!f.name.value.trim()||f.telefon.value.replace(/\D/g,"").length<5){m.className="kf-msg err";m.textContent="Bitte geben Sie Ihren Namen und Ihre Telefonnummer an.";return}
+b.disabled=true;m.className="kf-msg";m.textContent="Wird gesendet …";fetch(f.action,{method:"POST",body:new FormData(f)}).then(function(r){return r.json()}).then(function(d){
+m.className="kf-msg "+(d.ok?"ok":"err");m.textContent=d.meldung||(d.ok?"Vielen Dank!":"Senden fehlgeschlagen.");if(d.ok){f.reset();b.textContent="Gesendet ✓"}else b.disabled=false}).catch(function(){m.className="kf-msg err";m.textContent="Senden fehlgeschlagen – bitte rufen Sie uns an.";b.disabled=false})})})();</script>
+
+
 <section class="sec" id="leistungen" aria-labelledby="svc-h">
   <div class="wrap">
     <div class="sec-head">
@@ -849,35 +879,6 @@ footer a:hover{color:#fff}
     </div>
   </div>
 </section>
-<section class="kf-sec" id="rueckruf" aria-labelledby="kf-h">
-  <div class="wrap kf-grid">
-    <div>
-      <span class="kf-eb">Rückruf anfordern</span>
-      <h2 class="kf-h" id="kf-h">Wir rufen Sie <em>gerne zurück.</em></h2>
-      <p class="kf-p">Hinterlassen Sie uns Ihren Namen und Ihre Telefonnummer – wir melden uns so schnell wie möglich bei Ihnen.</p>
-      <ul class="kf-list"><li>Kostenlos und unverbindlich</li><li>Persönlicher Rückruf</li><li>Ihre Daten bleiben bei uns</li></ul>
-    </div>
-    <form class="kf-form" id="kf-form" action="https://kanzleifaktor-crm.vercel.app/api/seite/kontakt" method="post" novalidate>
-      <input type="hidden" name="t" value="eyJsIjoiYmUyZjA2YTMtNTBhYS00YTY4LWIwMDQtZjRjZjRkZjc5MmE2IiwiZSI6ImluZm9Ac3JzLWhhbm5vdmVyLmRlIiwicyI6InNycy1oYW5ub3ZlciJ9.4kleid-yYjYEpmUvTRsunr"><input type="hidden" name="ts" value="">
-      <label class="kf-hp" aria-hidden="true">Website<input type="text" name="firma_web" tabindex="-1" autocomplete="off"></label>
-      <div class="kf-row">
-        <label>Ihr Name<input type="text" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></label>
-        <label>Telefonnummer<input type="tel" name="telefon" required autocomplete="tel" placeholder="z. B. 0171 1234567"></label>
-      </div>
-      <label>Ihre Nachricht<textarea name="nachricht" placeholder="Worum geht es? (optional)"></textarea></label>
-      <label class="kf-check"><input type="checkbox" name="rueckruf" value="1" checked> Bitte rufen Sie mich zurück</label>
-      <button class="kf-btn" type="submit">Rückruf anfordern</button>
-      <p class="kf-msg" role="status" aria-live="polite"></p>
-      <p class="kf-small">Mit dem Absenden willigen Sie ein, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verwenden.</p>
-    </form>
-  </div>
-</section>
-<script>(function(){var f=document.getElementById("kf-form");if(!f)return;f.ts.value=Date.now();f.addEventListener("submit",function(ev){ev.preventDefault();var m=f.querySelector(".kf-msg"),b=f.querySelector(".kf-btn");
-if(!f.name.value.trim()||f.telefon.value.replace(/\D/g,"").length<5){m.className="kf-msg err";m.textContent="Bitte geben Sie Ihren Namen und Ihre Telefonnummer an.";return}
-b.disabled=true;m.className="kf-msg";m.textContent="Wird gesendet …";fetch(f.action,{method:"POST",body:new FormData(f)}).then(function(r){return r.json()}).then(function(d){
-m.className="kf-msg "+(d.ok?"ok":"err");m.textContent=d.meldung||(d.ok?"Vielen Dank!":"Senden fehlgeschlagen.");if(d.ok){f.reset();b.textContent="Gesendet ✓"}else b.disabled=false}).catch(function(){m.className="kf-msg err";m.textContent="Senden fehlgeschlagen – bitte rufen Sie uns an.";b.disabled=false})})})();</script>
-
-
 </main>
 
 <footer>
@@ -895,9 +896,10 @@ m.className="kf-msg "+(d.ok?"ok":"err");m.textContent=d.meldung||(d.ok?"Vielen D
   </div>
 </footer>
 
-<nav class="mbar" aria-label="Schnellkontakt">
+<nav class="mbar kf4" aria-label="Schnellkontakt">
   <a href="tel:+49511472022"><svg><use href="#i-phone"/></svg>Anrufen</a>
   <a href="mailto:info@srs-hannover.de?subject=Terminanfrage%20HU"><svg><use href="#i-mail"/></svg>E-Mail</a>
+  <a href="#kontaktformular"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Schreiben</a>
   <a class="go" href="https://www.terminland.de/pruefstelle_bornum/" target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Termin buchen</a>
 </nav>
 
