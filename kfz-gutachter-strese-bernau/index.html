@@ -582,6 +582,47 @@ header nav a{white-space:nowrap}
 @media (max-width:900px){.wz-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.wz-row{grid-template-columns:1fr}.wz-btn{width:100%}.wl-list{grid-template-columns:1fr}.wz-live{border-radius:16px}}
 </style>
+<style id="km-css">
+.km-wrap{grid-column:1/-1;width:100%}
+.km-towns{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+.km-towns span{padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:15px;color:var(--navy)}
+.km-towns span b{font-weight:600}
+.km-card{position:relative;border-radius:var(--r-l);overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);margin-top:clamp(18px,3vw,32px)}
+.km-card svg{display:block;width:100%;height:auto}
+.km-head{position:absolute;top:16px;left:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--navy)}
+.km-head::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);animation:kmPulse 2s infinite}
+@keyframes kmPulse{0%{box-shadow:0 0 0 0 rgba(31,157,85,.5)}70%{box-shadow:0 0 0 9px rgba(31,157,85,0)}100%{box-shadow:0 0 0 0 rgba(31,157,85,0)}}
+.km-note{position:absolute;bottom:12px;left:16px;z-index:2;font-size:12px;color:#7D8DA3}
+.km-tl{font:600 21px Inter,sans-serif;fill:#2A3D58}
+.km-tk{font:500 15px Inter,sans-serif;fill:#7D8DA3}
+.km-td{fill:#fff;stroke:var(--blue);stroke-width:3;transition:fill .3s}
+.km-t.active .km-td{fill:var(--blue)}
+.km-t.own .km-td{fill:var(--gold,#F5B700);stroke:#0A2647}
+.km-rb{fill:none;stroke:#D6E3F2;stroke-width:3}
+.km-rf{fill:none;stroke:var(--blue);stroke-width:2.2;stroke-dasharray:2 12;stroke-linecap:round;opacity:.5;animation:kmFlow 1.8s linear infinite}
+@keyframes kmFlow{to{stroke-dashoffset:-28}}
+.km-ring{fill:none;stroke:var(--blue);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:kmRing 3.4s cubic-bezier(.2,.7,.2,1) infinite}
+.km-ring.r2{animation-delay:1.7s}
+@keyframes kmRing{0%{transform:scale(.5);opacity:.7}100%{transform:scale(2.8);opacity:0}}
+.km-hit{fill:none;stroke:var(--green);stroke-width:3;transform-box:fill-box;transform-origin:center;animation:kmHit 1s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes kmHit{0%{transform:scale(.6);opacity:1}100%{transform:scale(3);opacity:0}}
+.km-toasts{position:absolute;right:16px;top:16px;z-index:3;display:flex;flex-direction:column;gap:10px;width:min(300px,calc(100% - 32px));pointer-events:none}
+.km-toast{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:11px 13px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 14px 30px -16px rgba(10,38,71,.35);animation:kmIn .55s cubic-bezier(.2,.7,.2,1) both}
+.km-toast.out{animation:kmOut .45s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes kmIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes kmOut{to{opacity:0;transform:translateY(-8px)}}
+.km-toast .ok{width:34px;height:34px;border-radius:50%;background:#E3F4EA;color:var(--green);display:grid;place-items:center}
+.km-toast .ok svg{width:18px;height:18px}
+.km-toast b{display:block;font-size:14px;color:var(--navy);line-height:1.3}
+.km-toast span{display:block;font-size:12.5px;color:var(--muted);line-height:1.35}
+@media (max-width:640px){
+  .km-card{display:flex;flex-direction:column}
+  .km-head{position:static;margin:14px 14px 0;align-self:flex-start}
+  .km-toasts{position:static;width:auto;margin:0 14px 10px;min-height:124px}
+  .km-toast:nth-child(n+3){display:none}
+  .km-note{position:static;margin:0 14px 12px}
+}
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -800,7 +841,37 @@ header nav a{white-space:nowrap}
       </div>
       
     </div>
-    <div class="de rv d1"><svg id="deMap" viewBox="0 0 600 800" role="img" aria-label="Deutschlandkarte mit den Standorten von SV Strese"></svg></div>
+    <div class="de rv d1" hidden style="display:none"><svg id="deMap" viewBox="0 0 600 800" role="img" aria-label="Deutschlandkarte mit den Standorten von SV Strese"></svg></div>
+  <div class="km-wrap rv d1">
+      <div class="km-towns"><span><b>Bernau bei Berlin</b> · vor Ort</span><span>Biesenthal · 13 km</span><span>Werneuchen · 14 km</span><span>Wandlitz · 14 km</span><span>Glienicke · 24 km</span><span>Hohen Neuendorf · 27 km</span><span>Strausberg · 28 km</span></div>
+      <div class="km-card" id="kmCard">
+        <span class="km-head">SV Strese · Einsatzgebiet</span>
+        <svg id="kmMap" viewBox="-220 60 1440 690" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Karte: Einsatzgebiet rund um Bernau bei Berlin – Biesenthal, Werneuchen, Wandlitz, Glienicke, Hohen Neuendorf, Strausberg, Oranienburg und Umgebung">
+        <defs>
+          <pattern id="kmGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#EDF3FA" stroke-width="1.5"/></pattern>
+          <radialGradient id="kmGlow"><stop offset="0" stop-color="#0B4F9C" stop-opacity=".18"/><stop offset="1" stop-color="#0B4F9C" stop-opacity="0"/></radialGradient>
+          <filter id="kmSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0A2647" flood-opacity=".18"/></filter>
+        </defs>
+        <rect x="-220" y="60" width="1440" height="690" fill="#F8FBFE"/>
+        <rect x="-220" y="60" width="1440" height="690" fill="url(#kmGrid)"/>
+        <path d="M-220 330 C -100 300, 0 360, 120 340" fill="none" stroke="#DCEAF8" stroke-width="6"/>
+        <ellipse cx="-90" cy="220" rx="90" ry="50" fill="#EEF6EC"/><ellipse cx="1110" cy="420" rx="100" ry="60" fill="#EEF6EC"/>
+        <path d="M1000 260 C 1060 300, 1120 280, 1220 320" fill="none" stroke="#DCEAF8" stroke-width="6"/>
+        <path d="M120 120 C 180 160, 160 260, 240 300 S 300 420, 260 520 S 300 660, 380 760" fill="none" stroke="#CFE2F6" stroke-width="10" stroke-linecap="round"/>
+        <path d="M-20 600 C 160 560, 300 640, 460 610 S 760 690, 1020 650" fill="none" stroke="#DCEAF8" stroke-width="7" stroke-linecap="round"/>
+        <ellipse cx="760" cy="200" rx="120" ry="70" fill="#EEF6EC"/>
+        <ellipse cx="250" cy="420" rx="90" ry="55" fill="#EEF6EC"/>
+        <ellipse cx="700" cy="660" rx="110" ry="50" fill="#EEF6EC"/>
+        <g id="kmRings" fill="none" stroke="#D6E3F2" stroke-dasharray="4 8"></g>
+        <g id="kmRoutes"></g>
+        <g id="kmTowns"></g>
+        <g id="kmTrav"></g>
+        <g id="kmHub"></g>
+      </svg>
+        <div class="km-toasts" id="kmToasts"></div>
+        <span class="km-note">Symbolische Darstellung</span>
+      </div>
+    </div>
   </div>
 </section>
 <section class="sec" id="team" aria-labelledby="tm-h">
@@ -1019,6 +1090,71 @@ fetch(f.action,{method:"POST",body:fd}).then(function(r){return r.json()}).then(
 var li=document.querySelectorAll("#wlList li"),done=document.getElementById("wlDone");
 li.forEach(function(l){function t(){l.classList.toggle("ok");var n=document.querySelectorAll("#wlList li.ok").length;done.textContent=n===li.length?"Alles erledigt – jetzt nur noch den Schaden melden, wir kümmern uns um den Rest.":n+" von "+li.length+" erledigt."}
 l.addEventListener("click",t);l.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t()}})});
+})();</script>
+<script>(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, at, par){ var e = document.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); if (par) par.appendChild(e); return e; }
+  function P(lat, lon){ return [(lon - 13.28835) * 1800, (52.86252 - lat) * 2300 + 40]; }
+  var HUB = P(52.67991, 13.59502);
+  var TOWNS = [{"n": "Biesenthal", "lat": 52.76616, "lon": 13.64416, "km": "13 km", "a": "start", "own": false}, {"n": "Werneuchen", "lat": 52.63275, "lon": 13.73437, "km": "14 km", "a": "start", "own": false}, {"n": "Wandlitz", "lat": 52.74196, "lon": 13.45799, "km": "14 km", "a": "end", "own": false}, {"n": "Glienicke", "lat": 52.63353, "lon": 13.32564, "km": "24 km", "a": "end", "own": false}, {"n": "Hohen Neuendorf", "lat": 52.67737, "lon": 13.27887, "km": "27 km", "a": "end", "own": false}, {"n": "Strausberg", "lat": 52.57859, "lon": 13.88741, "km": "28 km", "a": "start", "own": false}, {"n": "Oranienburg", "lat": 52.748, "lon": 13.25194, "km": "30 km", "a": "end", "own": false}].map(function(t){ t.p = P(t.lat, t.lon); return t; });
+  [120,240,360,480,600].forEach(function(r){ el('circle',{cx:HUB[0],cy:HUB[1],r:r},document.getElementById('kmRings')); });
+  var RG = document.getElementById('kmRoutes'), TG = document.getElementById('kmTowns');
+  TOWNS.forEach(function(t,i){
+    var x0=t.p[0],y0=t.p[1],x1=HUB[0],y1=HUB[1],mx=(x0+x1)/2,my=(y0+y1)/2,dx=x1-x0,dy=y1-y0,b=i%2?.2:-.2;
+    var d = 'M'+x0+','+y0+' Q'+(mx-dy*b)+','+(my+dx*b)+' '+x1+','+y1;
+    el('path',{d:d,'class':'km-rb'},RG);
+    t.path = el('path',{d:d,'class':'km-rf',style:'animation-delay:'+(-i*.2)+'s'},RG);
+    t.len = t.path.getTotalLength();
+    t.g = el('g',{'class':'km-t'+(t.own?' own':'')},TG);
+    el('circle',{cx:x0,cy:y0,r:t.own?10:8,'class':'km-td'},t.g);
+    var o = t.a==='end'?-16:16;
+    el('text',{x:x0+o,y:y0-3,'class':'km-tl','text-anchor':t.a},t.g).textContent = t.n;
+    el('text',{x:x0+o,y:y0+19,'class':'km-tk','text-anchor':t.a},t.g).textContent = t.km;
+  });
+  var hub = document.getElementById('kmHub');
+  el('circle',{cx:HUB[0],cy:HUB[1],r:110,fill:'url(#kmGlow)'},hub);
+  el('circle',{cx:HUB[0],cy:HUB[1],r:28,'class':'km-ring'},hub);
+  el('circle',{cx:HUB[0],cy:HUB[1],r:28,'class':'km-ring r2'},hub);
+  var hitG = el('g',{},hub);
+  el('circle',{cx:HUB[0],cy:HUB[1],r:28,fill:'#0B4F9C',filter:'url(#kmSh)'},hub);
+  el('path',{d:'M'+(HUB[0]-11)+','+(HUB[1]+1)+' l7,7 l15,-15',fill:'none',stroke:'#fff','stroke-width':4.5,'stroke-linecap':'round','stroke-linejoin':'round'},hub);
+  var lab = el('g',{transform:'translate('+(HUB[0]+42)+','+(HUB[1]+6)+')'},hub);
+  el('rect',{x:0,y:-34,width:230,height:62,rx:12,fill:'#fff',stroke:'#DCE5F0',filter:'url(#kmSh)'},lab);
+  el('text',{x:16,y:-9,style:'font:600 21px "Source Serif 4",Georgia,serif;fill:#0A2647'},lab).textContent = "Bernau bei Berlin";
+  el('text',{x:16,y:15,style:'font:500 14px Inter,sans-serif;fill:#0B4F9C'},lab).textContent = "SV Strese";
+  var TR = document.getElementById('kmTrav'), TO = document.getElementById('kmToasts');
+  var VEH = [["Kombi", "Unfallgutachten erstellt"], ["Kleinwagen", "Haftpflichtschaden begutachtet"], ["SUV", "Kaskoschaden dokumentiert"], ["Transporter", "Gutachten erstellt"], ["Limousine", "Wertminderung ermittelt"], ["Oldtimer", "Wertgutachten erstellt"], ["Motorrad", "Schaden begutachtet"], ["Cabrio", "Totalschaden – Restwert ermittelt"], ["Kombi", "Beweissicherung erledigt"]];
+  function ease(x){ return x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2; }
+  var live = [], vi = 0, last = -1;
+  function spawn(){
+    var ti; do { ti = Math.floor(Math.random()*TOWNS.length); } while (ti===last && TOWNS.length>1); last = ti;
+    var t = TOWNS[ti]; t.g.classList.add('active'); setTimeout(function(){ t.g.classList.remove('active'); },1300);
+    var g = el('g',{},TR);
+    var trail = [3,2,1].map(function(k){ return el('circle',{r:6-k,fill:'#0B4F9C',opacity:.5-k*.12},g); });
+    var halo = el('circle',{r:17,fill:'#0B4F9C',opacity:.14},g);
+    var car = el('circle',{r:9,fill:'#0B4F9C',stroke:'#fff','stroke-width':3},g);
+    live.push({t:t,g:g,parts:[[car,0],[halo,0],[trail[2],.03],[trail[1],.06],[trail[0],.09]],start:performance.now(),dur:2600+t.len*2.2,v:VEH[vi++%VEH.length]});
+  }
+  function toast(v, town){
+    var d = document.createElement('div'); d.className='km-toast';
+    d.innerHTML = '<span class="ok"><svg><use href="#i-check"/></svg></span><div><b>'+v[1]+'</b><span>'+v[0]+' · aus '+town+'</span></div>';
+    TO.insertBefore(d, TO.firstChild);
+    [].slice.call(TO.children, 3).forEach(function(x){ x.classList.add('out'); setTimeout(function(){ x.remove(); },450); });
+  }
+  var run = false, timer;
+  function loop(ts){
+    for (var i=live.length-1;i>=0;i--){
+      var L = live[i], pr = Math.min(1,(ts-L.start)/L.dur);
+      L.parts.forEach(function(pp){ var pt = L.t.path.getPointAtLength(Math.max(0,ease(pr)-pp[1])*L.t.len); pp[0].setAttribute('cx',pt.x); pp[0].setAttribute('cy',pt.y); });
+      if (pr>=1){ L.g.remove(); live.splice(i,1); var r = el('circle',{cx:HUB[0],cy:HUB[1],r:28,'class':'km-hit'},hitG); setTimeout(function(){ r.remove(); },1000); toast(L.v,L.t.n); }
+    }
+    if (run) requestAnimationFrame(loop);
+  }
+  function start(){ if (run) return; run = true; spawn(); timer = setInterval(spawn, 1900); requestAnimationFrame(loop); }
+  function stop(){ run = false; clearInterval(timer); }
+  if (reduce || !('IntersectionObserver' in window)) { [0,1,2].forEach(function(k,i){ if (TOWNS[i]) toast(VEH[k],TOWNS[i].n); }); }
+  else new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting ? start() : stop(); }); }, {threshold:.2}).observe(document.getElementById('kmCard'));
 })();</script>
 </body>
 </html>
