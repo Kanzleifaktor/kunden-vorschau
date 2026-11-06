@@ -535,6 +535,50 @@ footer a:hover{color:#fff}
 @media (max-width:460px){.opts.o3{grid-template-columns:1fr}}
 .toast.nomini{grid-template-columns:auto 1fr}
 </style>
+<style>
+.kf-sec{padding:clamp(56px,8vw,96px) 0;background:var(--bg-2,#F6F9FD)}
+.kf-sec .wrap{max-width:var(--max,1240px);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.kf-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,5vw,64px);align-items:start}
+.kf-eb{display:inline-block;font:600 13px/1 var(--sans,system-ui);letter-spacing:.12em;text-transform:uppercase;color:var(--blue,#0B4F9C);margin-bottom:14px}
+.kf-h{font:600 clamp(28px,3.6vw,42px)/1.12 var(--serif,Georgia,serif);color:var(--navy,#0A2647);margin:0 0 14px}
+.kf-h em{font-style:italic;color:var(--blue,#0B4F9C)}
+.kf-p{color:var(--muted,#4A5B73);font:400 17px/1.6 var(--sans,system-ui);margin:0 0 18px}
+.kf-list{list-style:none;padding:0;margin:0;display:grid;gap:10px;color:var(--text,#16263D);font:500 16px/1.4 var(--sans,system-ui)}
+.kf-list li:before{content:"✓";display:inline-grid;place-items:center;width:24px;height:24px;margin-right:10px;border-radius:50%;background:var(--sky,#EAF2FB);color:var(--blue,#0B4F9C);font-weight:700;font-size:13px}
+.kf-form{background:#fff;border:1px solid var(--line,#DCE5F0);border-radius:var(--r-l,22px);padding:clamp(20px,3vw,34px);box-shadow:var(--shadow,0 18px 40px -18px rgba(10,38,71,.22));display:grid;gap:14px}
+.kf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.kf-form label{display:grid;gap:6px;font:600 14px/1.2 var(--sans,system-ui);color:var(--navy,#0A2647)}
+.kf-form input[type=text],.kf-form input[type=tel],.kf-form textarea{width:100%;box-sizing:border-box;border:1.5px solid var(--line,#DCE5F0);border-radius:12px;padding:13px 14px;font:400 16px/1.4 var(--sans,system-ui);color:var(--text,#16263D);background:#fff;transition:border-color .2s,box-shadow .2s}
+.kf-form textarea{min-height:120px;resize:vertical}
+.kf-form input:focus,.kf-form textarea:focus{outline:none;border-color:var(--blue,#0B4F9C);box-shadow:0 0 0 4px var(--sky,#EAF2FB)}
+.kf-check{display:flex!important;grid-template-columns:none;align-items:center;gap:10px!important;font-weight:500!important}
+.kf-check input{width:20px;height:20px;accent-color:var(--blue,#0B4F9C)}
+.kf-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.kf-btn{border:0;cursor:pointer;border-radius:999px;padding:16px 26px;font:700 16px/1 var(--sans,system-ui);color:#fff;background:var(--blue,#0B4F9C);transition:transform .2s,background .2s}
+.kf-btn:hover{background:var(--blue-d,var(--navy,#083D7A));transform:translateY(-1px)}
+.kf-btn[disabled]{opacity:.6;cursor:wait}
+.kf-msg{font:500 15px/1.5 var(--sans,system-ui);margin:0;min-height:1em}
+.kf-msg.ok{color:var(--green,#1F9254)}.kf-msg.err{color:#B42318}
+.kf-small{font:400 13px/1.5 var(--sans,system-ui);color:var(--muted,#4A5B73);margin:0}
+.kf-rv{padding:clamp(56px,8vw,96px) 0;background:#fff}
+.kf-rv-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.kf-score{display:flex;align-items:center;gap:12px;border:1px dashed var(--line,#DCE5F0);border-radius:16px;padding:12px 18px;color:var(--muted,#4A5B73);font:500 14px/1.3 var(--sans,system-ui);text-decoration:none}
+.kf-score b{display:block;color:var(--navy,#0A2647);font-size:16px}
+.kf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kf-card{position:relative;border:1px solid var(--line,#DCE5F0);border-radius:var(--r-l,22px);padding:22px;background:linear-gradient(180deg,#fff,var(--bg-2,#F6F9FD));overflow:hidden}
+.kf-card .st{color:#F4B400;letter-spacing:2px;font-size:18px}
+.kf-card .ln{height:10px;border-radius:6px;background:var(--sky-2,#D6E5F5);margin:12px 0;opacity:.8}
+.kf-card .ln.s{width:62%}.kf-card .ln.m{width:84%}
+.kf-card .who{display:flex;align-items:center;gap:10px;margin-top:18px}
+.kf-card .av{width:38px;height:38px;border-radius:50%;background:var(--sky,#EAF2FB)}
+.kf-card .nm{height:10px;width:90px;border-radius:6px;background:var(--sky-2,#D6E5F5)}
+.kf-card:after{content:"Platzhalter";position:absolute;top:16px;right:16px;font:600 11px/1 var(--sans,system-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--blue,#0B4F9C);background:var(--sky,#EAF2FB);padding:6px 9px;border-radius:999px}
+.kf-note{margin:22px 0 0;text-align:center;color:var(--muted,#4A5B73);font:400 15px/1.6 var(--sans,system-ui)}
+.kf-real:after{display:none}.kf-real .kf-txt{font:400 15px/1.6 var(--sans,system-ui);color:var(--text,#16263D);margin:12px 0 0}.kf-real .who{flex-direction:column;align-items:flex-start;gap:2px}.kf-real .who b{color:var(--navy,#0A2647);font:600 15px/1.3 var(--sans,system-ui)}.kf-real .who small{color:var(--muted,#4A5B73);font:400 13px/1.3 var(--sans,system-ui)}
+@media (max-width:900px){.kf-grid,.kf-cards{grid-template-columns:1fr}.kf-cards .kf-card:not(.kf-real):nth-child(n+2){display:none}}
+@media (max-width:560px){.kf-row{grid-template-columns:1fr}.kf-btn{width:100%}}
+</style>
+<style id="kf-oben">.kf-sec.kf-top{background:var(--bg-2,#F6F9FD);border-top:1px solid var(--line,#DCE5F0);border-bottom:1px solid var(--line,#DCE5F0)}header nav li.kf-nav{display:none}@media (min-width:1360px){header nav li.kf-nav{display:block}}header nav li.kf-nav a{color:var(--blue,#0B4F9C);font-weight:600}.mbar.kf4{grid-template-columns:1fr 1fr 1fr 1.4fr!important}.mbar.kf4 a{font-size:12.5px}.mbar.kf4 a.go{flex-direction:column;gap:2px;font-size:13px;text-align:center;line-height:1.1}</style>
 </head>
 <body>
 
@@ -579,7 +623,7 @@ footer a:hover{color:#fff}
         <li><a href="#hu-check">HU fällig?</a></li>
         <li><a href="#ueber">Über uns</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li class="kf-nav"><a href="#kontaktformular">Nachricht senden</a></li><li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
     <a class="btn btn-blue" href="tel:+498721506880"><svg class="i"><use href="#i-phone"/></svg>Anrufen<span class="hide-s">&nbsp;08721 50688-0</span></a>
@@ -643,6 +687,35 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- SERVICES -->
+<section class="kf-sec kf-top" id="kontaktformular" aria-labelledby="kf-h">
+  <span id="rueckruf"></span><div class="wrap kf-grid">
+    <div>
+      <span class="kf-eb">Kontaktformular</span>
+      <h2 class="kf-h" id="kf-h">Schreiben <em>Sie uns.</em></h2>
+      <p class="kf-p">Name, Telefonnummer und kurz Ihr Anliegen – wir melden uns so schnell wie möglich bei Ihnen.</p>
+      <ul class="kf-list"><li>Kostenlos und unverbindlich</li><li>Persönlicher Rückruf</li><li>Ihre Daten bleiben bei uns</li></ul>
+    </div>
+    <form class="kf-form" id="kf-form" action="https://kanzleifaktor-crm.vercel.app/api/seite/kontakt" method="post" novalidate>
+      <input type="hidden" name="t" value="eyJsIjoiN2Y0MzViM2UtYWFlMi00MjE5LWIwODAtMGE1YTA4MGI3MjM3IiwiZSI6ImluZm9AYnJ1bm5lci1rZnotcHJ1ZWZzdGVsbGUuZGUiLCJzIjoiYnJ1bm5lci1rZnotcHJ1ZWZzdGVsbGUifQ.63AX6R47LTiVUSVIA_k-EQ"><input type="hidden" name="ts" value="">
+      <label class="kf-hp" aria-hidden="true">Website<input type="text" name="firma_web" tabindex="-1" autocomplete="off"></label>
+      <div class="kf-row">
+        <label>Ihr Name<input type="text" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></label>
+        <label>Telefonnummer<input type="tel" name="telefon" required autocomplete="tel" placeholder="z. B. 0171 1234567"></label>
+      </div>
+      <label>Ihre Nachricht<textarea name="nachricht" placeholder="Worum geht es? (optional)"></textarea></label>
+      <label class="kf-check"><input type="checkbox" name="rueckruf" value="1" checked> Bitte um Rückruf</label>
+      <button class="kf-btn" type="submit">Senden</button>
+      <p class="kf-msg" role="status" aria-live="polite"></p>
+      <p class="kf-small">Mit dem Absenden willigen Sie ein, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verwenden.</p>
+    </form>
+  </div>
+</section>
+<script>(function(){var f=document.getElementById("kf-form");if(!f)return;f.ts.value=Date.now();f.addEventListener("submit",function(ev){ev.preventDefault();var m=f.querySelector(".kf-msg"),b=f.querySelector(".kf-btn");
+if(!f.name.value.trim()||f.telefon.value.replace(/\D/g,"").length<5){m.className="kf-msg err";m.textContent="Bitte geben Sie Ihren Namen und Ihre Telefonnummer an.";return}
+b.disabled=true;m.className="kf-msg";m.textContent="Wird gesendet …";fetch(f.action,{method:"POST",body:new FormData(f)}).then(function(r){return r.json()}).then(function(d){
+m.className="kf-msg "+(d.ok?"ok":"err");m.textContent=d.meldung||(d.ok?"Vielen Dank!":"Senden fehlgeschlagen.");if(d.ok){f.reset();b.textContent="Gesendet ✓"}else b.disabled=false}).catch(function(){m.className="kf-msg err";m.textContent="Senden fehlgeschlagen – bitte rufen Sie uns an.";b.disabled=false})})})();</script>
+
+
 <section class="sec" id="leistungen" aria-labelledby="svc-h">
   <div class="wrap">
     <div class="sec-head">
@@ -843,6 +916,16 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- CONTACT -->
+<section class="kf-rv" id="bewertungen" aria-labelledby="kfrv-h">
+  <div class="wrap">
+    <div class="kf-rv-head">
+      <div><span class="kf-eb">Kundenstimmen</span><h2 class="kf-h" id="kfrv-h">Was Kunden <em>über uns sagen.</em></h2></div>
+      <div class="kf-score"><svg width="26" height="26" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.1C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.7c4.3-4 6.9-9.9 6.9-17.1z"/><path fill="#FBBC05" d="M10.6 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.1C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.7c-2.1 1.4-4.8 2.3-8.5 2.3-6.2 0-11.5-4.1-13.4-9.9l-7.9 6.1C6.6 42.6 14.6 48 24 48z"/></svg><span><b>Ihre Google-Bewertungen</b>erscheinen hier automatisch</span></div>
+    </div>
+    <div class="kf-cards"><div class="kf-card" aria-hidden="true"><div class="st">★★★★★</div><div class="ln"></div><div class="ln m"></div><div class="ln s"></div><div class="who"><span class="av"></span><span class="nm"></span></div></div><div class="kf-card" aria-hidden="true"><div class="st">★★★★★</div><div class="ln"></div><div class="ln m"></div><div class="ln s"></div><div class="who"><span class="av"></span><span class="nm"></span></div></div><div class="kf-card" aria-hidden="true"><div class="st">★★★★★</div><div class="ln"></div><div class="ln m"></div><div class="ln s"></div><div class="who"><span class="av"></span><span class="nm"></span></div></div></div>
+    <p class="kf-note">Hier zeigen wir Ihre echten Google-Bewertungen – Sterne, Anzahl und die schönsten Stimmen Ihrer Kunden.</p>
+  </div>
+</section>
 <section class="sec contact" id="kontakt" aria-labelledby="ct-h">
   <div class="wrap">
     <div>
@@ -872,7 +955,6 @@ footer a:hover{color:#fff}
     </div>
   </div>
 </section>
-
 </main>
 
 <footer>
@@ -890,9 +972,10 @@ footer a:hover{color:#fff}
   </div>
 </footer>
 
-<nav class="mbar" aria-label="Schnellkontakt">
+<nav class="mbar kf4" aria-label="Schnellkontakt">
   <a href="tel:+498721506880"><svg><use href="#i-phone"/></svg>Anrufen</a>
   <a href="mailto:info@brunner-kfz-pruefstelle.de?subject=Anfrage%20Kfz-Pr%C3%BCfstelle"><svg><use href="#i-mail"/></svg>E-Mail</a>
+  <a href="#kontaktformular"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Schreiben</a>
   <a class="go" href="https://www.google.com/maps/dir/?api=1&destination=Ingenieurb%C3%BCro%20Brunner%20GmbH%2C%20Lauterbachstra%C3%9Fe%2035%2C%2084307%20Eggenfelden" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Route planen</a>
 </nav>
 <script>
@@ -1065,5 +1148,6 @@ footer a:hover{color:#fff}
   else new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() : stop()), {threshold:.2}).observe($('mapcard'));
 })();
 </script>
+<script async src="https://kanzleifaktor-crm.vercel.app/vorschau-besuch.js" data-token="eyJsIjoiN2Y0MzViM2UtYWFlMi00MjE5LWIwODAtMGE1YTA4MGI3MjM3IiwiZSI6ImluZm9AYnJ1bm5lci1rZnotcHJ1ZWZzdGVsbGUuZGUiLCJzIjoiYnJ1bm5lci1rZnotcHJ1ZWZzdGVsbGUifQ.63AX6R47LTiVUSVIA_k-EQ"></script>
 </body>
 </html>
