@@ -498,6 +498,14 @@ header.site.open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-
   header.site.open nav a{padding:13px 12px;font-size:17px}
 }
 @media (max-width:760px){header .hdr-call{display:none}.burger{margin-left:auto}}
+#top{scroll-margin-top:-90px}
+#kontakt{scroll-margin-top:calc(8px - clamp(72px,9vw,120px))}
+@media (max-width:480px){#kontakt{scroll-margin-top:calc(-6px - clamp(72px,9vw,120px))}}
+.km-wave{animation:kmWaveAlt 3.2s ease-in-out infinite alternate}
+@keyframes kmWaveAlt{0%{transform:scale(.08);opacity:.6}100%{transform:scale(1);opacity:.12}}
+header.site .logo{background:#FFE500;padding:6px 14px;border-radius:10px}
+.topbar .i{color:#0A2647}
+header.site .logo small{color:#0A2647;border-left-color:rgba(10,38,71,.35)}
 </style>
 <style>
 .kf-sec{padding:clamp(56px,8vw,96px) 0;background:var(--bg-2,#F6F9FD)}
@@ -699,7 +707,7 @@ header.site.open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-
   <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
 </svg>
 
-<div class="topbar">
+<div id="top" class="topbar">
   <div class="wrap">
     <span class="tb-l"><svg class="i"><use href="#i-shield"/></svg> Kfz-Gutachten im Umkreis von 100 km</span>
     <div class="tb-r"><a class="tb-hide" href="mailto:info@svbuero-beisel.de"><svg class="i"><use href="#i-mail"/></svg> info@svbuero-beisel.de</a><a href="tel:+491718743215"><svg class="i"><use href="#i-phone"/></svg> 0171 8743215</a></div>
@@ -712,19 +720,18 @@ header.site.open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-
       <img src="img/logo.png" alt="KFZ-Sachverständigenbüro Beisel" width="753" height="336">
       <small>KFZ-Sachverständigenbüro</small>
     </a>
-    <nav aria-label="Hauptnavigation" id="hdrNav"><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Ablauf</a></li><li><a href="#kontakt">Anfahrt</a></li><li><a href="#team">Über uns</a></li><li><a href="#faq">Fragen</a></li><li><a href="#schaden">Schaden melden</a></li>
-        <li><a href="#kontakt">Kontakt</a></li></ul></nav>
+    <nav aria-label="Hauptnavigation" id="hdrNav"><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Ablauf</a></li><li><a href="#kontakt">Anfahrt / Kontakt</a></li><li><a href="#team">Über uns</a></li><li><a href="#faq">Fragen</a></li><li><a href="#schaden">Schaden melden</a></li></ul></nav>
     <a class="btn btn-gold hdr-call" href="tel:+491718743215" ><svg class="i"><use href="#i-phone"/></svg> <span>Jetzt <span class="hide-s"></span>anrufen</span></a>
     <button type="button" class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hdrNav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<main id="top">
+<main>
 <section class="hero" aria-labelledby="h1">
   <div class="wrap">
     <div>
       <span class="eyebrow rv">Kfz-Sachverständiger in St. Leon-Rot</span>
       <h1 class="h1 rv d1" id="h1">Unfall gehabt? <em>Schnelle &amp; zuverlässige Kfz-Gutachten.</em></h1>
-      <p class="sub rv d2">Das Sachverständigenbüro Beisel erstellt in St. Leon-Rot unabhängige Unfallgutachten, Wertgutachten und Beweissicherungsgutachten – für Pkw, Krafträder und Lkw im Umkreis von 100 km, von Karlsruhe und Heilbronn bis Darmstadt und Frankfurt.</p>
+      <p class="sub rv d2">Das Sachverständigenbüro Beisel erstellt in St. Leon-Rot unabhängige Unfallgutachten, Wertgutachten und Beweissicherungsgutachten – für Pkw, Krafträder und Lkw im Umkreis von 100 km, von Heidelberg, Karlsruhe und Heilbronn bis Darmstadt und Frankfurt.</p>
       <div class="ctas rv d3">
         <a class="btn btn-gold" href="tel:+491718743215" ><svg class="i"><use href="#i-phone"/></svg> 0171 8743215 anrufen</a>
         <a class="btn btn-wa" href="https://wa.me/491718743215?text=Hallo%20Herr%20Beisel%2C%20ich%20hatte%20einen%20Unfall%20und%20brauche%20ein%20Gutachten." target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg> Fotos per WhatsApp</a>
@@ -809,7 +816,7 @@ header.site.open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-
 <article class="veh rv d1"><img src="img/fz2.jpg" alt="Wertgutachten" loading="lazy"><span class="no">02</span><div class="in"><h3>Wertgutachten</h3><p>Sie wollen Ihren Wagen verkaufen und kennen den Wert nicht? Das Wertgutachten zeigt, welchen Preis Sie am Markt verlangen können.</p><a class="go" href="#kontakt" >Gutachten anfordern <svg class="i"><use href="#i-arrow"/></svg></a></div></article>
 <article class="veh rv d2"><img src="img/fz3.jpg" alt="Beweissicherungsgutachten" loading="lazy"><span class="no">03</span><div class="in"><h3>Beweissicherungsgutachten</h3><p>Die Schuldfrage ist unklar? Dann sichern wir alle Beweise am Fahrzeug – mit einem neutralen Sachverständigen an Ihrer Seite.</p><a class="go" href="#kontakt" >Gutachten anfordern <svg class="i"><use href="#i-arrow"/></svg></a></div></article>
     </div>
-    <div class="more"><div class="rv"><span class="ic"><svg class=""><use href="#i-hand"/></svg></span><h3>Komplettservice</h3><p>Wir übernehmen den Komplettservice für die Abwicklung des Schadens.</p></div><div class="rv d1"><span class="ic"><svg class=""><use href="#i-moto"/></svg></span><h3>Krafträder</h3><p>Gutachten für Krafträder, Personenkraftwagen und Lastkraftwagen.</p></div><div class="rv d2"><span class="ic"><svg class=""><use href="#i-tag"/></svg></span><h3>Kostenvoranschläge</h3><p>Fahrzeugbewertungen und Kostenvoranschläge auf Anfrage.</p></div><div class="rv d3"><span class="ic"><svg class=""><use href="#i-pin"/></svg></span><h3>100 km Umkreis</h3><p>Von St. Leon-Rot bis Karlsruhe, Heilbronn, Frankfurt, Darmstadt, Ludwigshafen und Kaiserslautern.</p></div></div>
+    <div class="more"><div class="rv"><span class="ic"><svg class=""><use href="#i-hand"/></svg></span><h3>Komplettservice</h3><p>Wir übernehmen den Komplettservice für die Abwicklung des Schadens.</p></div><div class="rv d1"><span class="ic"><svg class=""><use href="#i-moto"/></svg></span><h3>Krafträder</h3><p>Gutachten für Krafträder, Personenkraftwagen und Lastkraftwagen.</p></div><div class="rv d2"><span class="ic"><svg class=""><use href="#i-tag"/></svg></span><h3>Kostenvoranschläge</h3><p>Fahrzeugbewertungen und Kostenvoranschläge auf Anfrage.</p></div><div class="rv d3"><span class="ic"><svg class=""><use href="#i-pin"/></svg></span><h3>100 km Umkreis</h3><p>Von St. Leon-Rot bis Heidelberg, Karlsruhe, Heilbronn, Frankfurt, Darmstadt, Ludwigshafen und Kaiserslautern.</p></div></div>
   </div>
 </section>
 
@@ -899,15 +906,15 @@ header.site.open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-
     <div>
       <span class="eyebrow rv">Einsatzgebiet</span>
       <h2 class="h2 rv d1" id="loc-h">Im Umkreis von 100 km – <em>schnell bei Ihnen.</em></h2>
-      <p class="lead rv d2">Unser Büro sitzt in St. Leon-Rot. Von hier aus sind wir im Umkreis von rund 100 km für Sie unterwegs, unter anderem in Karlsruhe, Heilbronn, Frankfurt, Darmstadt, Ludwigshafen und Kaiserslautern.</p>
+      <p class="lead rv d2">Unser Büro sitzt in St. Leon-Rot. Von hier aus sind wir im Umkreis von rund 100 km für Sie unterwegs, unter anderem in Heidelberg, Karlsruhe, Heilbronn, Frankfurt, Darmstadt, Ludwigshafen und Kaiserslautern.</p>
             
     </div>
     <div class="de rv d1" hidden style="display:none"><svg id="deMap" viewBox="0 0 600 800" role="img" aria-label="Deutschlandkarte mit den Standorten von SV Beisel"></svg></div>
   <div class="km-wrap rv d1">
-      <div class="km-towns"><span><b>St. Leon-Rot</b> · vor Ort</span><span>Ludwigshafen · 27 km</span><span>Karlsruhe · 33 km</span><span>Heilbronn · 44 km</span><span>Kaiserslautern · 67 km</span><span>Darmstadt · 68 km</span><span>Frankfurt · 94 km</span></div>
+      <div class="km-towns"><span><b>St. Leon-Rot</b> · vor Ort</span><span>Heidelberg · 15 km</span><span>Ludwigshafen · 27 km</span><span>Karlsruhe · 33 km</span><span>Heilbronn · 44 km</span><span>Kaiserslautern · 67 km</span><span>Darmstadt · 68 km</span><span>Frankfurt · 94 km</span></div>
       <div class="km-card" id="kmCard">
         <span class="km-head">SV Beisel · Einsatzgebiet</span>
-        <svg id="kmMap" viewBox="-220 60 1440 690" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Karte: Einsatzgebiet im Umkreis von 100 km rund um St. Leon-Rot – Karlsruhe, Heilbronn, Frankfurt, Darmstadt, Ludwigshafen und Kaiserslautern">
+        <svg id="kmMap" viewBox="-220 60 1440 690" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Karte: Einsatzgebiet im Umkreis von 100 km rund um St. Leon-Rot – Heidelberg, Karlsruhe, Heilbronn, Frankfurt, Darmstadt, Ludwigshafen und Kaiserslautern">
         <defs>
           <pattern id="kmGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#EDF3FA" stroke-width="1.5"/></pattern>
           <radialGradient id="kmGlow"><stop offset="0" stop-color="#0B4F9C" stop-opacity=".18"/><stop offset="1" stop-color="#0B4F9C" stop-opacity="0"/></radialGradient>
@@ -960,7 +967,7 @@ header.site.open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-
     <div class="wl-end"><span id="wlDone">Geschafft? Dann melden Sie uns den Schaden – wir kümmern uns um den Rest.</span><a href="#schaden">Schaden melden</a></div>
   </div>
 </section>
-<section class="sec" id="faq" style="background:var(--bg-2)" aria-labelledby="fq-h"><div class="wrap faq-wrap"><div><span class="eyebrow rv">Häufige Fragen</span><h2 class="h2 rv d1" id="fq-h">Gut zu wissen <em>nach einem Unfall.</em></h2><p class="lead rv d2">Ihre Frage ist nicht dabei? Rufen Sie an oder schreiben Sie uns per WhatsApp – wir antworten schnell.</p></div><div class="faq"><details><summary>Wer bezahlt das Unfallgutachten? <span class="pm">+</span></summary><p>Bei einem unverschuldeten Unfall muss die Versicherung Ihres Unfallgegners für die Kosten des Unfallgutachtens aufkommen. Wir rechnen direkt mit der Versicherung ab.</p></details><details><summary>Muss ich den Sachverständigen der Versicherung akzeptieren? <span class="pm">+</span></summary><p>Nein. Sie haben das Recht auf einen eigenen, neutralen und unabhängigen Sachverständigen.</p></details><details><summary>Für welche Fahrzeuge erstellen Sie Gutachten? <span class="pm">+</span></summary><p>Für Krafträder, Personenkraftwagen und Lastkraftwagen. Melden Sie sich gern – wir teilen Ihnen umgehend mit, ob wir für Ihr Fahrzeug ein Gutachten erstellen können und mit welchen Kosten Sie rechnen müssen.</p></details><details><summary>Was ist ein Beweissicherungsgutachten? <span class="pm">+</span></summary><p>Wenn die Schuldfrage unklar ist, werden alle Beweise am Fahrzeug gesichert. Bei Streit über den Unfallverlauf ist ein neutraler Sachverständiger an Ihrer Seite wichtig.</p></details><details><summary>Kommen Sie zum Fahrzeug? <span class="pm">+</span></summary><p>Ja, wir bieten einen Vorort-Service zur Gutachtenerstellung. Wenn das Fahrzeug nicht mehr fahrtüchtig ist, kommen wir zur Besichtigung zu Ihnen.</p></details><details><summary>In welchem Gebiet sind Sie tätig? <span class="pm">+</span></summary><p>Unser Büro sitzt in St. Leon-Rot. Wir kommen im Umkreis von rund 100 km zu Ihnen, zum Beispiel nach Karlsruhe, Heilbronn, Frankfurt, Darmstadt, Ludwigshafen und Kaiserslautern.</p></details></div></div></section>
+<section class="sec" id="faq" style="background:var(--bg-2)" aria-labelledby="fq-h"><div class="wrap faq-wrap"><div><span class="eyebrow rv">Häufige Fragen</span><h2 class="h2 rv d1" id="fq-h">Gut zu wissen <em>nach einem Unfall.</em></h2><p class="lead rv d2">Ihre Frage ist nicht dabei? Rufen Sie an oder schreiben Sie uns per WhatsApp – wir antworten schnell.</p></div><div class="faq"><details><summary>Wer bezahlt das Unfallgutachten? <span class="pm">+</span></summary><p>Bei einem unverschuldeten Unfall muss die Versicherung Ihres Unfallgegners für die Kosten des Unfallgutachtens aufkommen. Wir rechnen direkt mit der Versicherung ab.</p></details><details><summary>Muss ich den Sachverständigen der Versicherung akzeptieren? <span class="pm">+</span></summary><p>Nein. Sie haben das Recht auf einen eigenen, neutralen und unabhängigen Sachverständigen.</p></details><details><summary>Für welche Fahrzeuge erstellen Sie Gutachten? <span class="pm">+</span></summary><p>Für Krafträder, Personenkraftwagen und Lastkraftwagen. Melden Sie sich gern – wir teilen Ihnen umgehend mit, ob wir für Ihr Fahrzeug ein Gutachten erstellen können und mit welchen Kosten Sie rechnen müssen.</p></details><details><summary>Was ist ein Beweissicherungsgutachten? <span class="pm">+</span></summary><p>Wenn die Schuldfrage unklar ist, werden alle Beweise am Fahrzeug gesichert. Bei Streit über den Unfallverlauf ist ein neutraler Sachverständiger an Ihrer Seite wichtig.</p></details><details><summary>Kommen Sie zum Fahrzeug? <span class="pm">+</span></summary><p>Ja, wir bieten einen Vorort-Service zur Gutachtenerstellung. Wenn das Fahrzeug nicht mehr fahrtüchtig ist, kommen wir zur Besichtigung zu Ihnen.</p></details><details><summary>In welchem Gebiet sind Sie tätig? <span class="pm">+</span></summary><p>Unser Büro sitzt in St. Leon-Rot. Wir kommen im Umkreis von rund 100 km zu Ihnen, zum Beispiel nach Heidelberg, Karlsruhe, Heilbronn, Frankfurt, Darmstadt, Ludwigshafen und Kaiserslautern.</p></details></div></div></section>
 <section class="kf-rv" id="bewertungen" aria-labelledby="kfrv-h">
   <div class="wrap">
     <div class="kf-rv-head">
@@ -1140,11 +1147,11 @@ l.addEventListener("click",t);l.addEventListener("keydown",function(e){if(e.key=
   function el(tag, at, par){ var e = document.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); if (par) par.appendChild(e); return e; }
   var S = 2.9; function P(lat, lon){ return [500 + (lon - 8.62845) * Math.cos(49.26467*Math.PI/180) * 111.32 * S, 405 - (lat - 49.26467) * 110.57 * S]; }
   var HUB = P(49.26467, 8.62845);
-  var TOWNS = [{"n": "Ludwigshafen", "lat": 49.4774, "lon": 8.4452, "km": "27 km", "a": "end", "own": false}, {"n": "Karlsruhe", "lat": 49.0069, "lon": 8.4037, "km": "33 km", "a": "end", "own": false}, {"n": "Heilbronn", "lat": 49.1427, "lon": 9.2109, "km": "44 km", "a": "start", "own": false}, {"n": "Kaiserslautern", "lat": 49.4401, "lon": 7.7491, "km": "67 km", "a": "end", "own": false}, {"n": "Darmstadt", "lat": 49.8728, "lon": 8.6512, "km": "68 km", "a": "start", "own": false}, {"n": "Frankfurt", "lat": 50.1109, "lon": 8.6821, "km": "94 km", "a": "start", "own": false}].map(function(t){ t.p = P(t.lat, t.lon); return t; });
+  var TOWNS = [{"n": "Ludwigshafen", "lat": 49.4774, "lon": 8.4452, "km": "27 km", "a": "end", "own": false}, {"n": "Heidelberg", "lat": 49.3988, "lon": 8.6724, "km": "15 km", "a": "start", "own": false}, {"n": "Karlsruhe", "lat": 49.0069, "lon": 8.4037, "km": "33 km", "a": "end", "own": false}, {"n": "Heilbronn", "lat": 49.1427, "lon": 9.2109, "km": "44 km", "a": "start", "own": false}, {"n": "Kaiserslautern", "lat": 49.4401, "lon": 7.7491, "km": "67 km", "a": "end", "own": false}, {"n": "Darmstadt", "lat": 49.8728, "lon": 8.6512, "km": "68 km", "a": "start", "own": false}, {"n": "Frankfurt", "lat": 50.1109, "lon": 8.6821, "km": "94 km", "a": "start", "own": false}].map(function(t){ t.p = P(t.lat, t.lon); return t; });
   var RGs = document.getElementById('kmRings');
   [25,50,75,100].forEach(function(k){ el('circle',{cx:HUB[0],cy:HUB[1],r:k*S,'class':k===100?'km-r100':''},RGs); });
   el('text',{x:HUB[0],y:HUB[1]-100*S-10,'class':'km-r100l','text-anchor':'middle'},RGs).textContent = '100 km Umkreis';
-  if (!reduce) [0,1,2].forEach(function(i){ el('circle',{cx:HUB[0],cy:HUB[1],r:100*S,'class':'km-wave','style':'animation-delay:'+(i*1.6)+'s'},RGs); });
+  if (!reduce) [0,1,2].forEach(function(i){ el('circle',{cx:HUB[0],cy:HUB[1],r:100*S,'class':'km-wave','style':'animation-delay:'+(-i*1.07)+'s'},RGs); });
   var RG = document.getElementById('kmRoutes'), TG = document.getElementById('kmTowns');
   TOWNS.forEach(function(t,i){
     var x0=t.p[0],y0=t.p[1],x1=HUB[0],y1=HUB[1],mx=(x0+x1)/2,my=(y0+y1)/2,dx=x1-x0,dy=y1-y0,b=i%2?.2:-.2;
@@ -1165,7 +1172,7 @@ l.addEventListener("click",t);l.addEventListener("keydown",function(e){if(e.key=
   var hitG = el('g',{},hub);
   el('circle',{cx:HUB[0],cy:HUB[1],r:28,fill:'#0B4F9C',filter:'url(#kmSh)'},hub);
   el('path',{d:'M'+(HUB[0]-11)+','+(HUB[1]+1)+' l7,7 l15,-15',fill:'none',stroke:'#fff','stroke-width':4.5,'stroke-linecap':'round','stroke-linejoin':'round'},hub);
-  var lab = el('g',{transform:'translate('+(HUB[0]+42)+','+(HUB[1]-46)+')'},hub);
+  var lab = el('g',{transform:'translate('+(HUB[0]-214)+','+(HUB[1]+14)+')'},hub);
   el('rect',{x:0,y:-34,width:172,height:62,rx:12,fill:'#fff',stroke:'#DCE5F0',filter:'url(#kmSh)'},lab);
   el('text',{x:16,y:-9,style:'font:600 21px "Source Serif 4",Georgia,serif;fill:#0A2647'},lab).textContent = "St. Leon-Rot";
   el('text',{x:16,y:15,style:'font:500 14px Inter,sans-serif;fill:#0B4F9C'},lab).textContent = "SV Beisel";
