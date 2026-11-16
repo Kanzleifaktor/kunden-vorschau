@@ -501,6 +501,7 @@ header.site.open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-
 .logo-orig{height:auto!important;width:auto;max-height:46px;max-width:min(420px,calc(100vw - 110px));border-radius:6px;display:block}
 @media (max-width:600px){.logo-orig{max-width:54vw}}
 .logo small{display:none!important}
+#top{scroll-margin-top:-90px}
 #kontakt{scroll-margin-top:calc(8px - clamp(72px,9vw,120px))}
 @media (max-width:480px){#kontakt{scroll-margin-top:calc(-6px - clamp(72px,9vw,120px))}}
 .km-wave{animation:kmWaveAlt 3.2s ease-in-out infinite alternate}
@@ -711,7 +712,7 @@ header.site .wrap{max-width:1440px;gap:18px}header nav a{padding:10px 10px;font-
   <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
 </svg>
 
-<div class="topbar">
+<div id="top" class="topbar">
   <div class="wrap">
     <span class="tb-l"><svg class="i"><use href="#i-shield"/></svg> Kfz-Gutachten im Umkreis von 100 km</span>
     <div class="tb-r"><a class="tb-hide" href="mailto:info@svbuero-beisel.de"><svg class="i"><use href="#i-mail"/></svg> info@svbuero-beisel.de</a><a href="tel:+491718743215"><svg class="i"><use href="#i-phone"/></svg> 0171 8743215</a></div>
@@ -729,7 +730,7 @@ header.site .wrap{max-width:1440px;gap:18px}header nav a{padding:10px 10px;font-
     <button type="button" class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hdrNav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<main id="top">
+<main>
 <section class="hero" aria-labelledby="h1">
   <div class="wrap">
     <div>
