@@ -506,6 +506,11 @@ header.site.open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-
 header.site .logo{background:#FFE500;padding:6px 14px;border-radius:10px}
 .topbar .i{color:#0A2647}
 header.site .logo small{color:#0A2647;border-left-color:rgba(10,38,71,.35)}
+.ka-biz{position:absolute;top:12px;right:12px;z-index:2;display:flex;align-items:center;gap:12px;max-width:min(360px,calc(100% - 24px));padding:10px 14px 10px 10px;background:#fff;border-radius:14px;box-shadow:0 10px 28px -12px rgba(10,38,71,.45);border:1px solid var(--line)}
+.ka-biz-logo{flex:none;background:#FFE500;border-radius:10px;padding:6px 8px;display:block}.ka-biz-logo img{display:block;height:34px;width:auto}
+.ka-biz b{display:block;font-size:15px;color:var(--navy);line-height:1.25}.ka-biz span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.ka-biz a{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:13.5px;font-weight:600;color:var(--blue)}.ka-biz .i{width:15px;height:15px}
+@media (max-width:860px){.ka-map{min-height:420px}.ka-biz{top:auto;bottom:30px;left:10px;right:auto;max-width:calc(100% - 70px);padding:8px 12px 8px 8px;gap:10px}.ka-biz-logo{padding:4px 6px}.ka-biz-logo img{height:24px}.ka-biz b{font-size:13.5px}.ka-biz span{font-size:12px}.ka-biz a{margin-top:3px;font-size:12.5px}}
 </style>
 <style>
 .kf-sec{padding:clamp(56px,8vw,96px) 0;background:var(--bg-2,#F6F9FD)}
@@ -674,9 +679,9 @@ header.site .logo small{color:#0A2647;border-left-color:rgba(10,38,71,.35)}
 .topbar{background:#FFE500;color:#0A2647}.topbar a,.topbar svg{color:#0A2647}
 .eyebrow{color:#0A2647}.eyebrow::before{background:#FFE500}
 </style><style id="logo-zeile">header.site .logo{flex:none}
-header.site .wrap{max-width:1440px;gap:18px}header nav a{padding:10px 10px;font-size:15.5px}header nav ul{gap:0}
-header.site .logo small{display:block!important;max-width:none!important;white-space:nowrap;hyphens:none;overflow-wrap:normal;font-size:11.5px;letter-spacing:.1em}
-@media (max-width:1400px){
+header.site .wrap{gap:14px;justify-content:space-between}header nav{margin-inline:auto}header .hdr-call{margin-left:0}header nav a{padding:10px 8px;font-size:15.5px}header nav ul{gap:0}
+header.site .logo small{display:block!important;max-width:none!important;white-space:nowrap;hyphens:none;overflow-wrap:normal;font-size:11px;letter-spacing:.06em}
+@media (max-width:1280px){
   header nav{display:none}.burger{display:flex}header .hdr-call{margin-left:auto}
   header.site .wrap{position:relative}
   header.site.open nav{display:block;position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:0 18px 30px -20px rgba(10,38,71,.45);padding:10px 16px 16px}
@@ -913,7 +918,7 @@ header.site .logo small{display:block!important;max-width:none!important;white-s
         <div class="ka-cta"><a class="btn btn-gold" href="tel:+491718743215"><svg class="i"><use href="#i-phone"/></svg> Anrufen</a><a class="btn btn-wa" href="https://wa.me/491718743215?text=Hallo%20Herr%20Beisel%2C%20ich%20hatte%20einen%20Unfall%20und%20brauche%20ein%20Gutachten." target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg> WhatsApp</a></div>
         <div class="soc"><a class="soc-btn" href="https://www.facebook.com/Kfz-Sachverst%C3%A4ndigenb%C3%BCro-Beisel-232321500148541/" target="_blank" rel="noopener" aria-label="SV Beisel auf Facebook"><svg class="i"><use href="#i-fb"/></svg></a><button type="button" class="soc-btn" aria-label="Instagram (folgt in Kürze)" title="Instagram folgt in Kürze"><svg class="i"><use href="#i-ig"/></svg></button></div>
       </div>
-      <div class="ka-map rv d2"><iframe title="Karte: Hauptstr. 128, 68789 St. Leon-Rot" src="https://maps.google.com/maps?q=Hauptstra%C3%9Fe%20128%2C%2068789%20St.%20Leon-Rot&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="ka-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Hauptstr.%20128%2C%2068789%20St.%20Leon-Rot" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg> Route planen</a></div>
+      <div class="ka-map rv d2"><iframe title="Karte: Rudolf Beisel KFZ-Sachverständiger, Hauptstr. 128, 68789 St. Leon-Rot" src="https://maps.google.com/maps?q=Rudolf%20Beisel%20KFZ-Sachverst%C3%A4ndiger%2C%20Hauptstra%C3%9Fe%20128%2C%2068789%20St.%20Leon-Rot&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><div class="ka-biz"><span class="ka-biz-logo"><img src="img/logo.png" alt="" width="753" height="336"></span><div><b>KFZ-Sachverständigenbüro Beisel</b><span>Hauptstr. 128<br>68789 St.&nbsp;Leon-Rot</span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Rudolf%20Beisel%20KFZ-Sachverst%C3%A4ndiger%2C%20Hauptstra%C3%9Fe%20128%2C%2068789%20St.%20Leon-Rot" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg> Route planen</a></div></div></div>
     </div>
   </div>
 </section>
